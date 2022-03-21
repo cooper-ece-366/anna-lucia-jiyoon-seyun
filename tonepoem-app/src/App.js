@@ -122,20 +122,18 @@ function App() {
       </div>
 
       <section class="section">
-        <h1>Describe these Sounds!</h1>
-        <p>A collaborative effor to name every color in the RGB/web space</p>
+        <h1>What is TONEPOEM</h1>
+        <p>A collaborative effort to create a comprehensive and well-classified database of sounds using a concise list of adjectives.</p>
 
         <h2>Why does it matter?</h2>
-        <p>Humans benefit from a nomenclature for animals, plnats, insects, etc so why not colors? Describibng the world around us is what we do.</p>
-        
+        <p>There are few tagged databases of sounds and of those that are documented, the tags are exclusively literal descriptions. Audio tagging is an important task to be able to predict the tags of audio clips. This is only possible through a thoroughly tagged audio-database.</p>
+
         <h2>How does it work?</h2>
-        <p>Anyone can propose a new name for a particular color. So long as the name is descriptive and non-offensive, it becomes associated with that color. If multiple names are proposed for the same color, it is then a matter of which name has the most votes from the community.</p>
-        
-        <h2>Why should I help?</h2>
-        <p>All naming data is made freely available to anyone who wants it. No cost or copyright/license restrictions. If we can establish an open, free, and consistent source of color names then it's something everyone will benefit from.</p>
-        
-        <h2>How can I help?</h2>
-        <p>Easy! Listen to a short sound clip and select the adjective that you think is appropriate!</p>
+        <p>To contribute to the database of audio tags and explore the audio space, listen to a short randomly-selected audio clip and choose from the word wheel the best adjective associated with the audio. Then learn more about the source of the audio clip which will be revealed.</p>
+
+        <h2>How can I interact with the data?</h2>
+        <p>Have fun <i>tagging</i> audio! You can also <i>explore</i> what sounds have been associated with which adjectives. If you’re interested in <i>playing</i> with the data we collect and <i>expanding</i> on the TONEPOEM mission, all tags are made open-source as are the audio databases we pull from. Check out the Data/API tab and feel free to contact us.</p>
+
       </section>
     </div>
   );
