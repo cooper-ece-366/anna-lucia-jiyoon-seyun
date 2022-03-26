@@ -6,10 +6,13 @@ This application will allow users to label audio samples based on the mood/feeli
 
 ## To download audio data##
 Git clone the following [git repository](https://github.com/mdeff/fma)
+
 <code>git clone https://github.com/mdeff/fma.git</code>
+
 <code>cd fma/data</code>
 
-Download the data you want
+
+*Download the data you want by typing the appropriate command lines below*
 <code>
 curl -O https://os.unil.cloud.switch.ch/fma/fma_metadata.zip
 curl -O https://os.unil.cloud.switch.ch/fma/fma_small.zip
