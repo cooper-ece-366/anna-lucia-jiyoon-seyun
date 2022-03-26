@@ -4,15 +4,15 @@ ECE 366 Spring 2022 -- Anna Konvicka, Lucia Rhode, Jiyoon Pyo, Seyun Kim
 
 This application will allow users to label audio samples based on the mood/feeling evoked by the audio. The goal of the project is to create a classified database of sounds with abstract labels which can be used in further machine learning applications.
 
-## To download audio data##
-Git clone the following [git repository](https://github.com/mdeff/fma)
-
+## Download audio data ##
+**1. Git clone the following [git repository](https://github.com/mdeff/fma)**
 <code>git clone https://github.com/mdeff/fma.git</code>
 
+**2. Navigate to where the data will be downloaded**
 <code>cd fma/data</code>
 
 
-*Download the data you want by typing the appropriate command lines below*
+**3. Download the data you want by typing the appropriate command lines below**
 <code>
 curl -O https://os.unil.cloud.switch.ch/fma/fma_metadata.zip
 curl -O https://os.unil.cloud.switch.ch/fma/fma_small.zip
@@ -37,5 +37,10 @@ cd ..
 
 For the demo page, we used *fma_small.zip*
 
+## Contribution ##
+Contribute by opening an [issue](https://github.com/cooper-ece-366/anna-lucia-jiyoon-seyun/issues) or a [pull request](https://github.com/cooper-ece-366/anna-lucia-jiyoon-seyun/pulls).
 
+## Thank you ##
 Thank you [source](https://github.com/mdeff/fma) for the code and dataset.
+
+
