@@ -1,6 +1,8 @@
 # for borsa-service
 ./borsa-service/src/main/resources/application.properties
 
+venv
+fma/
 ssh
 opt
 app.version
