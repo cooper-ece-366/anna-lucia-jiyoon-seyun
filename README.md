@@ -6,8 +6,8 @@ This application will allow users to label audio samples based on the mood/feeli
 
 ## To download audio data##
 Git clone the following [git repository](https://github.com/mdeff/fma)
-<code>git clone https://github.com/mdeff/fma.git
-<code>cd fma/data
+<code>git clone https://github.com/mdeff/fma.git</code>
+<code>cd fma/data</code>
 
 Download the data you want
 <code>
@@ -30,6 +30,7 @@ unzip fma_large.zip
 unzip fma_full.zip
 
 cd ..
+</code>
 
 For the demo page, we used *fma_small.zip*
 
