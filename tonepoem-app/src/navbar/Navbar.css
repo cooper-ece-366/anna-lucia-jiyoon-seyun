@@ -1,0 +1,21 @@
+.Navbar {
+    background-color: #C2B7A3;
+    text-align: left;
+    align-items: center;
+    display: flex;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.Linkbar {
+    align-items: center;
+    display: flex;
+    padding-left: 1rem;
+}
+
+.Links {
+    text-align: center;
+    align-items: center;
+    display: flex;
+    padding-left: 1rem;
+}

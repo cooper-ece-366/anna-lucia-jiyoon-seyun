@@ -1,122 +1,164 @@
-import React, { Component } from 'react';
+// import React, { Component } from 'react';
+// import './App.css';
+// import { PieChart, Pie, Sector } from 'recharts';
+// import {
+//   Route,
+//   Routes
+// } from 'react-router-dom';
+// import Home from '../pages/home/Home';
+
+// const data = [
+//   { name: 'Group A', def: 'sample definition A', value: 1 },
+//   { name: 'Group B', def: 'sample definition B', value: 1 },
+//   { name: 'Group C', def: 'sample definition C', value: 1 },
+//   { name: 'Group D', def: 'sample definition D', value: 1 },
+//   { name: 'Group E', def: 'sample definition E', value: 1 },
+//   { name: 'Group F', def: 'sample definition F', value: 1 },
+// ];
+
+// const renderActiveShape = (props) => {
+//   const RADIAN = Math.PI / 180;
+//   const { cx, cy, midAngle, innerRadius, outerRadius, startAngle, endAngle, fill, payload, name, def } = props;
+//   const sin = Math.sin(-RADIAN * midAngle);
+//   const cos = Math.cos(-RADIAN * midAngle);
+//   const sx = cx + (outerRadius + 10) * cos;
+//   const sy = cy + (outerRadius + 10) * sin;
+//   const mx = cx + (outerRadius + 30) * cos;
+//   const my = cy + (outerRadius + 30) * sin;
+//   const ex = mx + (cos >= 0 ? 1 : -1) * 22;
+//   const ey = my;
+//   const textAnchor = cos >= 0 ? 'start' : 'end';
+
+//   return (
+//     <g>
+//       <text x={cx} y={cy} dy={8} textAnchor="middle" fill={fill}>
+//         {payload.name}
+//       </text>
+//       <Sector
+//         cx={cx}
+//         cy={cy}
+//         innerRadius={innerRadius}
+//         outerRadius={outerRadius}
+//         startAngle={startAngle}
+//         endAngle={endAngle}
+//         fill={fill}
+//       />
+//       <Sector
+//         cx={cx}
+//         cy={cy}
+//         startAngle={startAngle}
+//         endAngle={endAngle}
+//         innerRadius={outerRadius + 6}
+//         outerRadius={outerRadius + 10}
+//         fill={fill}
+//       />
+//       <path d={`M${sx},${sy}L${mx},${my}L${ex},${ey}`} stroke={fill} fill="none" />
+//       <circle cx={ex} cy={ey} r={2} fill={fill} stroke="none" />
+//       <text x={ex + (cos >= 0 ? 1 : -1) * 12} y={ey} textAnchor={textAnchor} fill="#333">{name}</text>
+//       <text x={ex + (cos >= 0 ? 1 : -1) * 12} y={ey} dy={18} textAnchor={textAnchor} fill="#999">
+//         {def}
+//       </text>
+//     </g>
+//   );
+// };
+
+// const moveToNext = (prop) => {
+//   console.log("Pie is clicked")
+// };
+
+// class App extends Component {
+
+//   state = {
+//     activeIndex: 0,
+//   };
+
+//   onPieEnter = (_, index) => {
+//     this.setState({
+//       activeIndex: index,
+//     });
+//   };
+
+//   // onPieClick = (_) => {
+//   //   moveToNext
+//   // };
+
+// render() {
+//   return (
+//     <div className="App">
+//       <div className="app-body">
+//         <Routes>
+//           <Route path="/home" component={Home}></Route>
+//           <Route path="/latest" component={Home}></Route>
+//         </Routes>
+//       </div>
+
+//       <div class="topnav">
+//         <a class="active" href="/">TONEPOEM</a>
+//         <a href="/latest">Latest</a>
+//         <a href="/search">Search</a>
+//         <a href="/data">Data/API</a>
+//         <a href="/about">About</a>
+//       </div>
+
+//       <section class="pie-chart">
+//         <PieChart width={700} height={700}>
+//           <Pie 
+//             activeIndex={this.state.activeIndex}
+//             activeShape={renderActiveShape}
+//             data={data} 
+//             dataKey="value" 
+//             outerRadius={250} 
+//             fill="#ac3b61" 
+//             onMouseEnter={this.onPieEnter}
+//             />
+//         </PieChart>
+//       </section>
+//     </div>
+//   );
+// }
+// }
+
+import React from 'react' // THIS LINE IS REQUIRED
+import ReactDOM from 'react-dom'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'; // Do npm install react-router-dom@5
 import './App.css';
-import { PieChart, Pie, Sector, ResponsiveContainer } from 'recharts';
-import {
-  Route,
-  Routes
-} from 'react-router-dom';
-import Home from '../pages/home/Home';
+import Navbar from '../navbar/Navbar';
+import Home from './Home';
+import Tag from '../tag/Tag';
+import Explore from '../explore/Explore';
+import Contact from '../contact/Contact';
 
-const data = [
-  { name: 'Group A', value: 1 },
-  { name: 'Group B', value: 1 },
-  { name: 'Group C', value: 1 },
-  { name: 'Group D', value: 1 },
-  { name: 'Group E', value: 1 },
-  { name: 'Group F', value: 1 },
-];
+function App() {
+  const title = 'Welcome to the new blog';
+  const likes = 50;
 
-const renderActiveShape = (props) => {
-  const RADIAN = Math.PI / 180;
-  const { cx, cy, midAngle, innerRadius, outerRadius, startAngle, endAngle, fill, payload, percent, value } = props;
-  const sin = Math.sin(-RADIAN * midAngle);
-  const cos = Math.cos(-RADIAN * midAngle);
-  const sx = cx + (outerRadius + 10) * cos;
-  const sy = cy + (outerRadius + 10) * sin;
-  const mx = cx + (outerRadius + 30) * cos;
-  const my = cy + (outerRadius + 30) * sin;
-  const ex = mx + (cos >= 0 ? 1 : -1) * 22;
-  const ey = my;
-  const textAnchor = cos >= 0 ? 'start' : 'end';
+  return(
+    <Router>
+      <div className = "App">
+        <Navbar />
+        <div className = "content">
+          <Switch>
+            <Route exact path = "/">
+              <Home />
+            </Route>
 
-  return (
-    <g>
-      <text x={cx} y={cy} dy={8} textAnchor="middle" fill={fill}>
-        {payload.name}
-      </text>
-      <Sector
-        cx={cx}
-        cy={cy}
-        innerRadius={innerRadius}
-        outerRadius={outerRadius}
-        startAngle={startAngle}
-        endAngle={endAngle}
-        fill={fill}
-      />
-      <Sector
-        cx={cx}
-        cy={cy}
-        startAngle={startAngle}
-        endAngle={endAngle}
-        innerRadius={outerRadius + 6}
-        outerRadius={outerRadius + 10}
-        fill={fill}
-      />
-      <path d={`M${sx},${sy}L${mx},${my}L${ex},${ey}`} stroke={fill} fill="none" />
-      <circle cx={ex} cy={ey} r={2} fill={fill} stroke="none" />
-      <text x={ex + (cos >= 0 ? 1 : -1) * 12} y={ey} textAnchor={textAnchor} fill="#333">{`name`}</text>
-    </g>
-  );
-};
+            <Route exact path = "/tag">
+              <Tag />
+            </Route>
 
-class App extends Component {
+            <Route exact path = "/explore">
+              <Explore />
+            </Route>
 
-  state = {
-    activeIndex: 0,
-  };
-
-  onPieEnter = (_, index) => {
-    this.setState({
-      activeIndex: index,
-    });
-  };
-
-render() {
-  return (
-    <div className="App">
-      <div className="app-body">
-        <Routes>
-          <Route path="/home" component={Home}></Route>
-        </Routes>
+            <Route exact path = "/contact">
+              <Contact />
+            </Route>
+          </Switch>
+        </div>
       </div>
-      <div class="topnav">
-        <a class="active" href="/">TONEPOEM</a>
-        <a href="/latest">Latest</a>
-        <a href="/search">Search</a>
-        <a href="/data">Data/API</a>
-        <a href="/about">About</a>
-      </div>
+    </Router>
 
-      <section class="section">
-        <h1>What is TONEPOEM</h1>
-        <p>A collaborative effort to create a comprehensive and well-classified database of sounds using a concise list of adjectives.</p>
-
-        <h2>Why does it matter?</h2>
-        <p>There are few tagged databases of sounds and of those that are documented, the tags are exclusively literal descriptions. Audio tagging is an important task to be able to predict the tags of audio clips. This is only possible through a thoroughly tagged audio-database.</p>
-
-        <h2>How does it work?</h2>
-        <p>To contribute to the database of audio tags and explore the audio space, listen to a short randomly-selected audio clip and choose from the word wheel the best adjective associated with the audio. Then learn more about the source of the audio clip which will be revealed.</p>
-
-        <h2>How can I interact with the data?</h2>
-        <p>Have fun <i>tagging</i> audio! You can also <i>explore</i> what sounds have been associated with which adjectives. If you’re interested in <i>playing</i> with the data we collect and <i>expanding</i> on the TONEPOEM mission, all tags are made open-source as are the audio databases we pull from. Check out the Data/API tab and feel free to contact us.</p>
-
-      </section>
-
-      <section class="section">
-        <PieChart width={700} height={700}>
-          <Pie 
-            activeIndex={this.state.activeIndex}
-            activeShape={renderActiveShape}
-            data={data} 
-            dataKey="value" 
-            outerRadius={250} 
-            fill="#ac3b61" 
-            onMouseEnter={this.onPieEnter}/>
-        </PieChart>
-      </section>
-    </div>
   );
-}
 }
 
 export default App;

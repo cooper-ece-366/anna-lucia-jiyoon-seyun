@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  align-items: center;
+  background-color: #E0D9CE;
 }
 
 .App-logo {
@@ -78,6 +80,13 @@ a.button:hover{
 
 .blockquote p::after {
     content: '\201D';
+}
+
+.pie-chart {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 50px 50px;
 }
 
 .topnav {
