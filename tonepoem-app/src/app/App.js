@@ -123,7 +123,7 @@ import ReactDOM from 'react-dom'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'; // Do npm install react-router-dom@5
 import './App.css';
 import Navbar from '../navbar/Navbar';
-import Home from './Home';
+import Home from '../home/Home';
 import Tag from '../tag/Tag';
 import Explore from '../explore/Explore';
 import Contact from '../contact/Contact';
