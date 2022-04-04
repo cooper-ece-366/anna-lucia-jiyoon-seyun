@@ -1,7 +1,7 @@
 .App {
   text-align: center;
   align-items: center;
-  background-color: #E0D9CE;
+  background-color: #EEE2DC;
 }
 
 .App-logo {
@@ -21,7 +21,6 @@
 }
 
 .App-header {
-  background-color: #eee2dc;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -54,32 +53,8 @@ a.button:hover{
  background-color:#FFFFFF;
 }
 
-.blockquote{
-  color: #444;
-  border: 0;
-  outline: 0;
-  font: inherit;
-  vertical-align: baseline;
-  font-size: 1em;
-  line-height: 1.5;
-  border-left: 0.5em solid #DDD;
-  margin: 1.5em 0 1.5em -1.5em;
-  padding: .75em .5em .75em 1em;
-  background: #fff;
-  box-shadow: 0 0 6px rgba(0,0,0,0.5);
-}
-.blockquote p {
-    padding: 15px;
-    background: #eee;
-    border-radius: 5px;
-}
-
-.blockquote p::before {
-    content: '\201C';
-}
-
-.blockquote p::after {
-    content: '\201D';
+.links {
+  background-color: #EEE2DC
 }
 
 .pie-chart {

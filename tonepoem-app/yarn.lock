@@ -2277,6 +2277,18 @@
     "loader-utils" "^2.0.0"
     "regex-parser" "^2.2.11"
 
+"ag-charts-community@^5.1.0", "ag-charts-community@~5.1.0":
+  "integrity" "sha512-oTnsE1NNy94Kj3hZSxjfbybWcK/Ghf89hiaB1CEXMaSt0lrDb4IIr9tlcgGS4WR2qjPOHsEbZCUKmr+e6NfG/g=="
+  "resolved" "https://registry.npmjs.org/ag-charts-community/-/ag-charts-community-5.1.0.tgz"
+  "version" "5.1.0"
+
+"ag-charts-react@^5.1.0":
+  "integrity" "sha512-AKuf8ogjRg4bE6S7IjSbEZyVSTUiSm6Yvny5pYx78U39FSkJpsYrjzyfPdlW/U9FjOC0f16ZpvlrubDs9+8kuQ=="
+  "resolved" "https://registry.npmjs.org/ag-charts-react/-/ag-charts-react-5.1.0.tgz"
+  "version" "5.1.0"
+  dependencies:
+    "prop-types" "^15.6.2"
+
 "agent-base@6":
   "integrity" "sha512-RZNwNclF7+MS/8bDg70amg32dyeZGZxiDuQmZxKLAlQjr3jGyLx+4Kkk58UO7D2QdgFIQCovuSuZESne6RG6XQ=="
   "resolved" "https://registry.npmjs.org/agent-base/-/agent-base-6.0.2.tgz"
@@ -7342,7 +7354,7 @@
     "strip-ansi" "^6.0.1"
     "text-table" "^0.2.0"
 
-"react-dom@*", "react-dom@^15.0.0 || ^16.0.0 || ^17.0.0", "react-dom@^16.0.0 || ^17.0.0", "react-dom@^16.13.1", "react-dom@>= 16.8.0", "react-dom@>=15.0.0":
+"react-dom@*", "react-dom@^15.0.0 || ^16.0.0 || ^17.0.0", "react-dom@^16.0.0 || ^17.0.0", "react-dom@^16.13.1", "react-dom@^16.3.0 || ^17.0.0", "react-dom@>= 16.8.0", "react-dom@>=15.0.0":
   "integrity" "sha512-81PIMmVLnCNLO/fFOQxdQkvEq/+Hfpv24XNJfpyZhTRfO0QcmQIF/PgCa1zCOj2w1hrn12MFLyaJ/G0+Mxtfag=="
   "resolved" "https://registry.npmjs.org/react-dom/-/react-dom-16.13.1.tgz"
   "version" "16.13.1"
@@ -7489,7 +7501,7 @@
     "prop-types" "^15.6.2"
     "react-lifecycles-compat" "^3.0.4"
 
-"react@*", "react@^0.14.0 || ^15.0.0 || ^16.0.0 || ^17.0.0", "react@^15.0.0 || ^16.0.0 || ^17.0.0", "react@^16.0.0 || ^17.0.0", "react@^16.13.1", "react@>= 16", "react@>= 16.8.0", "react@>=15", "react@>=15.0.0":
+"react@*", "react@^0.14.0 || ^15.0.0 || ^16.0.0 || ^17.0.0", "react@^15.0.0 || ^16.0.0 || ^17.0.0", "react@^16.0.0 || ^17.0.0", "react@^16.13.1", "react@^16.3.0 || ^17.0.0", "react@>= 16", "react@>= 16.8.0", "react@>=15", "react@>=15.0.0":
   "integrity" "sha512-YMZQQq32xHLX0bz5Mnibv1/LHb3Sqzngu7xstSM+vrkE5Kzr9xE0yMByK5kMoTK30YVJE61WfbxIFFvfeDKT1w=="
   "resolved" "https://registry.npmjs.org/react/-/react-16.13.1.tgz"
   "version" "16.13.1"

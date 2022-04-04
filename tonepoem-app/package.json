@@ -6,6 +6,8 @@
     "@testing-library/jest-dom": "^5.16.2",
     "@testing-library/react": "^12.1.4",
     "@testing-library/user-event": "^7.2.1",
+    "ag-charts-community": "^5.1.0",
+    "ag-charts-react": "^5.1.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.3.0",

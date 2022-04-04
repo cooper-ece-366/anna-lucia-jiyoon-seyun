@@ -127,6 +127,7 @@ import Home from '../home/Home';
 import Tag from '../tag/Tag';
 import Explore from '../explore/Explore';
 import Contact from '../contact/Contact';
+import Info from '../Info/Info'
 
 function App() {
   const title = 'Welcome to the new blog';
@@ -136,7 +137,7 @@ function App() {
     <Router>
       <div className = "App">
         <Navbar />
-        <div className = "content">
+        <div className = "links">
           <Switch>
             <Route exact path = "/">
               <Home />
@@ -152,6 +153,10 @@ function App() {
 
             <Route exact path = "/contact">
               <Contact />
+            </Route>
+
+            <Route exact path = "/info">
+              <Info />
             </Route>
           </Switch>
         </div>
