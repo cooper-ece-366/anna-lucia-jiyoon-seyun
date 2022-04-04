@@ -1,5 +1,6 @@
 import React from 'react' // THIS LINE IS REQUIRED
 import ReactDOM from 'react-dom'
+import './Home.css'
 
 const Home = () => {
     return (

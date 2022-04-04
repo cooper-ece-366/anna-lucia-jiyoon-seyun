@@ -5,6 +5,13 @@
     display: flex;
     padding-left: 1rem;
     padding-right: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.Header {
+    font-size: x-large;
+    font-weight: bold;
 }
 
 .Linkbar {
@@ -18,4 +25,15 @@
     align-items: center;
     display: flex;
     padding-left: 1rem;
+}
+a {
+    text-decoration: none;
+}
+
+a:link, a:visited {
+    color: black;
+}
+
+a:hover {
+    color: #077B8A
 }

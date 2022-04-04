@@ -5,9 +5,8 @@ import './Navbar.css';
 const Navbar = () => {
     return (
         <nav className = "Navbar">
-            <h1>Tone-Poem</h1>
+            <a href = "/" className = "Header">Tone-Poem</a>
             <div className = "Linkbar">
-                <a href = "/" className = "Links"></a>
                 <a href = "/tag" className = "Links">Tag</a>
                 <a href = "/explore" className = "Links">Explore</a>
                 <a href = "/data" className = "Links">Data/API</a>

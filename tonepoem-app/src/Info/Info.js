@@ -52,6 +52,11 @@ export default class Info extends Component {
         };
     }
 
+    // TODO: Disable tooltip content display
+        // Refer to: https://www.ag-grid.com/react-charts/tooltips/
+    // TODO: Button 'on-click' event
+        // Refer to: https://www.ag-grid.com/react-charts/events/
+
     render() {        
         return (
             <div>

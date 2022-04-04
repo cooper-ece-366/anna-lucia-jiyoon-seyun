@@ -87,12 +87,3 @@ a.button:hover{
   background-color: #ac3b61;
   color: white;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
