@@ -46,7 +46,16 @@ export default class Info extends Component {
                     type: 'pie',
                     labelKey: 'adjective',
                     angleKey: 'check',
-                    radiusKey: 'selection'
+                    radiusKey: 'selection',
+                    tooltip: { renderer: renderer },
+                    listeners: {
+                        nodeClick: function (event) {
+                            //var datum = event.datum;
+                            window.alert(
+                                'Clicking'
+                            )
+                        }
+                    }
                 }],
             },
         };
@@ -76,4 +85,10 @@ export default class Info extends Component {
             </div>
         )
     }
+}
+
+function renderer(params) {
+    return {
+        content: params.radiusValue,
+    };
 }
