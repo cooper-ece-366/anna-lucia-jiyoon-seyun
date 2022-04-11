@@ -1,3 +1,4 @@
+import React from 'react';
 import GoogleLogin from 'react-google-login';
 
 const Login = () => {
@@ -23,12 +24,12 @@ const Login = () => {
 
     return(
         <GoogleLogin
-//            clientId="952972505853-d0ct4jna4kp5tolsm88vh55uo64p76ub.apps.googleusercontent.com"
-//            buttonText="Login"
-//            render={renderProps => (
-//                <button style={styleSheet.button} onClick={renderProps.onClick} disabled={renderProps.disabled}>Login</button>)}
-//            onSuccess={responseGoogle}
-//            onFailure={() => { console.error("Login Failed!") }}
+            clientId="952972505853-d0ct4jna4kp5tolsm88vh55uo64p76ub.apps.googleusercontent.com"
+            buttonText="Login"
+            render={renderProps => (
+                <button style={styleSheet.button} onClick={renderProps.onClick} disabled={renderProps.disabled}>Login</button>)}
+            onSuccess={responseGoogle}
+            onFailure={responseGoogle}
             cookiePolicy={'single_host_origin'}
           />
     )
