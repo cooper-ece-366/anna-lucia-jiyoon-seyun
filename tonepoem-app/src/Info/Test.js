@@ -1,0 +1,55 @@
+import React, { Component, MouseEvent, useRef } from 'react'
+//import type { InteractionItem } from 'chart.js';
+import {
+  Chart as ChartJS,
+  RadialLinearScale,
+  ArcElement,
+  Tooltip,
+  Legend,
+} from 'chart.js';
+
+import {
+    getDatasetAtEvent,
+    getElementAtEvent,
+    getElementsAtEvent,
+  } from 'react-chartjs-2';
+
+import { PolarArea } from 'react-chartjs-2';
+
+ChartJS.register(RadialLinearScale, ArcElement, Tooltip, Legend);
+
+export default class Test extends Component {
+    data = {
+        labels: ['Adjective 1', 'Adjective 2', 'Adjective 3', 'Adjective 4', 'Adjective 5', 'Adjective 6'],
+        datasets: [
+            {
+              label: 'Number of Selection',
+              data: [12, 19, 3, 5, 2, 3],
+              backgroundColor: [
+                'rgba(255, 99, 132, 0.5)',
+                'rgba(54, 162, 235, 0.5)',
+                'rgba(255, 206, 86, 0.5)',
+                'rgba(75, 192, 192, 0.5)',
+                'rgba(153, 102, 255, 0.5)',
+                'rgba(255, 159, 64, 0.5)',
+              ],
+              borderWidth: 1,
+            },
+          ]
+    };
+
+    const chartRef = useRef();
+
+    onClick = (event) => {
+        console.log(getDatasetAtEvent(chartRef.current, event));
+    };
+
+    render(){
+        return (
+            <PolarArea
+                ref={chartRef}
+                onClick={onCLick}
+                data={data} 
+            />)
+    }
+}
