@@ -8,14 +8,14 @@ const Login = () => {
     const styleSheet = {
         button: {
             background: "#C2B7A3",
-            color: "white",
+            color: "black",
             border: "solid #781C10",
             fontFamily: "'Sen', sans-serif",
             height: "40px",
             width: "120px",
             marginLeft: "20px",
             padding: "0px",
-            fontSize: "0.5em",
+            fontSize: "1.0em",
             borderRadius: "5px",
             cursor: "pointer",
             alignSelf: "center",
