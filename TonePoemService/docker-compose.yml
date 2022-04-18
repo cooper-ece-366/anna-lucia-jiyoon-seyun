@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  mongo:
+    image: mongo
+    volumes:
+      - ./mongodbdata:/data/db
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: "TonePoemUser"
+      MONGO_INITDB_ROOT_PASSWORD: "password"
+    ports:
+      - 127.0.0.1:27017:27017 #only listen to my own computer (loop back adapter?)
