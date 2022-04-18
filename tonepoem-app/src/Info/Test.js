@@ -18,7 +18,18 @@ import { PolarArea } from 'react-chartjs-2';
 
 ChartJS.register(RadialLinearScale, ArcElement, Tooltip, Legend);
 
+//const chartRef = useRef();
+
 export default class Test extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            active: true,
+            new: false
+        }
+//        this.onClicking = this.onClicking.bind(this)
+    }
+
     data = {
         labels: ['Adjective 1', 'Adjective 2', 'Adjective 3', 'Adjective 4', 'Adjective 5', 'Adjective 6'],
         datasets: [
@@ -26,30 +37,35 @@ export default class Test extends Component {
               label: 'Number of Selection',
               data: [12, 19, 3, 5, 2, 3],
               backgroundColor: [
-                'rgba(255, 99, 132, 0.5)',
-                'rgba(54, 162, 235, 0.5)',
-                'rgba(255, 206, 86, 0.5)',
-                'rgba(75, 192, 192, 0.5)',
-                'rgba(153, 102, 255, 0.5)',
-                'rgba(255, 159, 64, 0.5)',
+                'rgba(255, 99, 132)',
+                'rgba(54, 162, 235)',
+                'rgba(255, 206, 86)',
+                'rgba(75, 192, 192)',
+                'rgba(153, 102, 255)',
+                'rgba(255, 159, 64)',
               ],
               borderWidth: 1,
             },
           ]
     };
 
-    const chartRef = useRef();
+//    chartRef = useRef();
+//    onClicking = (event) => {
+//       console.log('hello');
+//    };
 
-    onClick = (event) => {
-        console.log(getDatasetAtEvent(chartRef.current, event));
-    };
+    // REFER TO: https://react-chartjs-2.js.org/docs/working-with-events
+    // TODO: React Chartjs with class version
 
     render(){
         return (
             <PolarArea
-                ref={chartRef}
-                onClick={onCLick}
-                data={data} 
+                data={this.data} 
+//                options = {{
+//                  onClick: () => {alert("test")}}
+//                }
+                // ref={this.chartRef}
+                
             />)
     }
 }
