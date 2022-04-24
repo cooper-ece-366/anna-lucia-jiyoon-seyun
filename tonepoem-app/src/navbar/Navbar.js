@@ -1,5 +1,4 @@
 import React from 'react' // THIS LINE IS REQUIRED
-import ReactDOM from 'react-dom'
 import './Navbar.css';
 
 const Navbar = () => {
