@@ -118,7 +118,7 @@
 // }
 // }
 
-import React from 'react' // THIS LINE IS REQUIRED
+// import React from 'react' // THIS LINE IS REQUIRED
 import ReactDOM from 'react-dom'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'; // Do npm install react-router-dom@5
 import './App.css';
@@ -129,9 +129,66 @@ import Explore from '../explore/Explore';
 import Contact from '../contact/Contact';
 import Info from '../Info/Info'
 
+import ReactPlayer from "react-player";
+
+// for audio interface
+import React, { useState, useEffect} from 'react';
+// import useInterval from './useInterval';
+import Player from '../components/Player';
+
 function App() {
   const title = 'Welcome to the new blog';
   const likes = 50;
+
+  const [songs] = useState([
+    {
+      title: "Food",
+      artist: "AWOL",
+      album: "AWOL - A Way of Life",
+      src: "000002.mp3"
+    },
+    {
+      title: "This World",
+      artist: "AWOL",
+      album: "AWOL - A Way of Life",
+      src: "000005.mp3"
+    },
+    {
+      title: "Freeway",
+      artist: "Kurt Vile",
+      album: "Constant Hitmaker",
+      src: "000010.mp3"
+    },
+    {
+      title: "Queen Of The Wires",
+      artist: "Alec K Redfearn And The Eyesores",
+      album: "The Blind Spot",
+      src: "000140.mp3"
+    },
+    {
+      title: "Ohioo",
+      artist: "Alec K Redfearn And The Eyesores",
+      album: "Every Man For Himself",
+      src: "000148.mp3"
+    }
+  ]);
+
+
+
+
+
+  const [currentSongIndex, setCurrentSongIndex] = useState(0);
+  const [nextSongIndex, setNextSongIndex] = useState(currentSongIndex + 1);
+
+  useEffect(() => {
+    setNextSongIndex(() => {
+      if (currentSongIndex + 1 > songs.length - 1) {
+        return 0;
+      } else {
+        return currentSongIndex + 1;
+      }
+    })
+  }, [currentSongIndex])
 
   return(
     <Router>
@@ -145,10 +202,26 @@ function App() {
 
             <Route exact path = "/tag">
               <Tag />
+
             </Route>
 
             <Route exact path = "/explore">
               <Explore />
+                <h3>Now Playing</h3>
+                <Player
+                    currentSongIndex={currentSongIndex}
+                    setCurrentSongIndex={setCurrentSongIndex}
+                    nextSongIndex={nextSongIndex}
+                    songs={songs}
+                />
+
+
+                {/*<Player*/}
+                {/*    currentSongIndex={currentSongIndex}*/}
+                {/*    setCurrentSongIndex={setCurrentSongIndex}*/}
+                {/*    nextSongIndex={nextSongIndex}*/}
+                {/*    songs={songs}*/}
+                {/*/>*/}
             </Route>
 
             <Route exact path = "/contact">
@@ -160,8 +233,12 @@ function App() {
             </Route>
           </Switch>
         </div>
+
+
+
       </div>
     </Router>
+
 
   );
 }
