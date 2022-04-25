@@ -20,9 +20,11 @@ ChartJS.register(
 // Event Reference: https://react-chartjs-2.js.org/examples/chart-events
 // Update Data: https://react-chartjs-2.js.org/examples/chart-ref
 // Additional (Gradient Radar): https://www.chartjs.org/docs/latest/samples/advanced/radial-gradient.html
+// Class format reference: https://www.codegrepper.com/code-examples/javascript/react+chart+js+2+api+data
+// 
 
 export const data = {
-  labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+  labels: ['One', 'Two', 'Three', 'Four', 'Five', 'Six'],
   datasets: [
     {
       label: 'First Type',
@@ -39,44 +41,21 @@ export const data = {
     }
   ],
 };
+// Updates Reference: https://www.chartjs.org/docs/latest/developers/updates.html
 
-export const dataLevelTwo = {
-  labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-  datasets: [
-    {
-      label: 'Second Type',
-      data: [1, 2, 3, 4, 5, 6],
-      backgroundColor: [
-        'rgba(255, 99, 132, 0.5)',
-        'rgba(54, 162, 235, 0.5)',
-        'rgba(255, 206, 86, 0.5)',
-        'rgba(75, 192, 192, 0.5)',
-        'rgba(153, 102, 255, 0.5)',
-        'rgba(255, 159, 64, 0.5)',
-      ],
-      borderWidth: 1,
-    }
-  ],
-};
+function changeData(chart, label, data){
+  //chart.data.labels.pop();
+  chart.data.labels = label;
+  //chart.data.labels.push(label);
+  chart.data.datasets = data;
+  // const temp = [1, 2, 3, 4, 5, 6];
 
-export const dataLevelThree = {
-  labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-  datasets: [
-    {
-      label: 'Third Type',
-      data: [6, 5, 4, 3, 2, 1],
-      backgroundColor: [
-        'rgba(255, 99, 132, 0.5)',
-        'rgba(54, 162, 235, 0.5)',
-        'rgba(255, 206, 86, 0.5)',
-        'rgba(75, 192, 192, 0.5)',
-        'rgba(153, 102, 255, 0.5)',
-        'rgba(255, 159, 64, 0.5)',
-      ],
-      borderWidth: 1,
-    }
-  ],
-};
+  // chart.data.datasets.forEach((dataset) => {
+  //   dataset.data = temp;
+  // });
+
+  chart.update();
+}
 
 function triggerTooltip(chart){
   var tooltip = chart === null || chart === void 0 ? void 0: chart.Tooltip;
@@ -109,55 +88,21 @@ function triggerTooltip(chart){
 
 }
 
-function addData(chart){
-  const newDataSet = {
-    label: 'Second Type',
-    data: [6, 5, 4, 3, 2, 1],
-    backgroundColor: [
-      'rgba(255, 99, 132, 0.5)',
-      'rgba(54, 162, 235, 0.5)',
-      'rgba(255, 206, 86, 0.5)',
-      'rgba(75, 192, 192, 0.5)',
-      'rgba(153, 102, 255, 0.5)',
-      'rgba(255, 159, 64, 0.5)',
-    ],
-    borderWidth: 1,
-  };
-  //chart.data.datasets.push()
-}
-
-// function action(chart){
-//   const data = chart.data;
-
-//   const newDataSet = {
-//     label: 'Second Type',
-//     data: [6, 5, 4, 3, 2, 1],
-//     backgroundColor: [
-//       'rgba(255, 99, 132, 0.5)',
-//       'rgba(54, 162, 235, 0.5)',
-//       'rgba(255, 206, 86, 0.5)',
-//       'rgba(75, 192, 192, 0.5)',
-//       'rgba(153, 102, 255, 0.5)',
-//       'rgba(255, 159, 64, 0.5)',
-//     ],
-//     borderWidth: 1,
-//   }
-
-//   chart.data.datasets.pop();
-//   chart.data.datesets.push(newDataSet);
-//   chart.update();
-// }
-
 // Actions: https://www.chartjs.org/docs/latest/samples/advanced/progress-bar.html
-const actions = [
-  {
-    name: 'Modify',
-    handler(chart) {
-      const data = chart.data;
+// Reference: Custom On Click Actions: https://www.chartjs.org/docs/latest/configuration/legend.html
 
-      const newDataSet = {
+function Test() {
+  const chartRef = useRef();
+  var adjectiveLevel = 1;
+
+  const onClick = () => {
+    const chart = chartRef.current;
+
+    const label = [['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'], ['a', 'b', 'c', 'd', 'e', 'f']];
+    const secondData = [
+      {
         label: 'Second Type',
-        data: [6, 5, 4, 3, 2, 1],
+        data: [1, 2, 3, 4, 5, 6],
         backgroundColor: [
           'rgba(255, 99, 132, 0.5)',
           'rgba(54, 162, 235, 0.5)',
@@ -168,37 +113,17 @@ const actions = [
         ],
         borderWidth: 1,
       }
+    ]
 
-      chart.data.dataset.pop();
-      chart.data.datasets.push(newDataSet);
-      chart.update();
-    }
-  }
-];
+    changeData(chart, label[0], secondData);
 
-function Test() {
-  const chartRef = useRef();
-  var adjectiveLevel = 1;
-
-  const onClick = (event) => {
-
-    if(!chartRef) {
-      return;
-    }
-
-    console.log('this is being clicked');
-    adjectiveLevel += 1;
-    addData(chartRef);
-    // console.log(adjectiveLevel);
-    
+    console.log('click click')
   }
 
   useEffect(() => {
     const chart = chartRef.current;
 
     triggerTooltip(chart);
-    // addData(chart);
-    // action(chartRef.current);
   }, []);
 
   return (
@@ -206,8 +131,6 @@ function Test() {
       ref={chartRef}
       data={data}
       onClick={onClick}
-      // options={
-      // }
     />
   );
 }
