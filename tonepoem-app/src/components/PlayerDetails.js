@@ -6,8 +6,8 @@ function PlayerDetails(props) {
             {/*<div className="details-img">*/}
             {/*    <img src={props.song.img} />*/}
             {/*</div>*/}
-            <p className="details-title">Title: <strong>{props.songs[0].title}</strong></p>
-            <p className="details-artist">Artist: <strong>Artist: {props.songs[0].artist}</strong></p>
+            <p className="details-title"><strong>Title:</strong> {props.song.title}</p>
+            <p className="details-artist"><strong>Artist: </strong>{props.song.artist}</p>
 
         </div>
     )

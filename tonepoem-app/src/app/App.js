@@ -174,9 +174,6 @@ function App() {
   ]);
 
 
-
-
-
   const [currentSongIndex, setCurrentSongIndex] = useState(0);
   const [nextSongIndex, setNextSongIndex] = useState(currentSongIndex + 1);
 
@@ -209,6 +206,7 @@ function App() {
               <Explore />
                 <h3>Now Playing</h3>
                 <Player
+                    testID = "player"
                     currentSongIndex={currentSongIndex}
                     setCurrentSongIndex={setCurrentSongIndex}
                     nextSongIndex={nextSongIndex}

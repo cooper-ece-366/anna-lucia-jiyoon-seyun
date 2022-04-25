@@ -4,22 +4,56 @@ import PlayerControls from "./PlayerControls";
 import ReactPlayer from "react-player";
 import ReactAudioPlayer from 'react-audio-player';
 
-import sound from "../assets/000002.mp3";
-
 function Player(props) {
     // control what song is played
-    const currentSongIndex = 0;
+    // const currentSongIndex = 2;
+    const [isPlaying, setIsPlaying] = useState(false);
 
+
+
+    const SkipSong = (forwards = true) => {
+        if (forwards) {
+            props.setCurrentSongIndex(() => {
+                let temp = props.currentSongIndex;
+                temp++;
+
+                if (temp > props.songs.length - 1) {
+                    temp = 0;
+                }
+                return temp;
+            });
+        } else {
+            props.setCurrentSongIndex(() => {
+                let temp = props.currentSongIndex;
+                temp --;
+
+                if (temp < 0) {
+                    temp = props.songs.length -1;
+                }
+                return temp;
+            });
+        }
+    }
     return (
-        <div>
-            <PlayerDetails songs={props.songs} />
-
-            <ReactAudioPlayer
-                // src="../assets/000002.mp3"
-                src={props.songs[currentSongIndex].src}
-                autoPlay={false}
-                controls
+        <div class="full-audio-player">
+            <PlayerDetails title="playerDetails"
+                song={props.songs[props.currentSongIndex]}
             />
+            <div>
+                <ReactAudioPlayer
+                    title="audioPlayer"
+                    src={props.songs[props.currentSongIndex].src}
+                    autoPlay={false}
+                    controls
+                />
+                <PlayerControls
+                    isPlaying={isPlaying}
+                    setIsPlaying={setIsPlaying}
+                    SkipSong={SkipSong}
+                />
+            </div>
+            <p>Next up: </p>
+            <p><strong>{props.songs[props.nextSongIndex].title}</strong> by <strong>{props.songs[props.nextSongIndex].artist}</strong></p>
 
         </div>
 

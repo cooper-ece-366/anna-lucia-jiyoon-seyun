@@ -1,0 +1,33 @@
+.c-player--controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.c-player--controls .play-btn {
+    display: flex;
+    margin: 0 30px;
+    padding: 20px;
+    border-radius: 50%;
+    /*border: 1px;*/
+    /*outline: 1px;*/
+    font-size: 24px;
+    cursor: pointer
+}
+
+.c-player--controls .skip-btn-forward {
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.c-player--controls .skip-btn-backward {
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 18px;
+}
