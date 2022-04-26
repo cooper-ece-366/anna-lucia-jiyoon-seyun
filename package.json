@@ -1,5 +1,6 @@
 {
   "dependencies": {
+<<<<<<< HEAD
     "@fortawesome/fontawesome-svg-core": "^6.1.1",
     "@fortawesome/free-solid-svg-icons": "^6.1.1",
     "@fortawesome/react-fontawesome": "^0.1.18"
@@ -8,5 +9,8 @@
     "@testing-library/react": "^13.1.1",
     "jest-dom": "^4.0.0",
     "react-test-renderer": "^18.0.0"
+=======
+    "react-google-login": "^5.2.2"
+>>>>>>> LUCIA-US-12
   }
 }
