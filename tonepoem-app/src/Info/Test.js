@@ -93,29 +93,47 @@ function triggerTooltip(chart){
 
 function Test() {
   const chartRef = useRef();
-  var adjectiveLevel = 1;
+  var adjectiveLevel = 0;
 
   const onClick = () => {
     const chart = chartRef.current;
 
     const label = [['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'], ['a', 'b', 'c', 'd', 'e', 'f']];
     const secondData = [
-      {
-        label: 'Second Type',
-        data: [1, 2, 3, 4, 5, 6],
-        backgroundColor: [
-          'rgba(255, 99, 132, 0.5)',
-          'rgba(54, 162, 235, 0.5)',
-          'rgba(255, 206, 86, 0.5)',
-          'rgba(75, 192, 192, 0.5)',
-          'rgba(153, 102, 255, 0.5)',
-          'rgba(255, 159, 64, 0.5)',
-        ],
-        borderWidth: 1,
-      }
+      [
+        {
+          label: 'Second Type',
+          data: [1, 2, 3, 4, 5, 6],
+          backgroundColor: [
+            'rgba(255, 99, 132, 0.5)',
+            'rgba(54, 162, 235, 0.5)',
+            'rgba(255, 206, 86, 0.5)',
+            'rgba(75, 192, 192, 0.5)',
+            'rgba(153, 102, 255, 0.5)',
+            'rgba(255, 159, 64, 0.5)',
+          ],
+          borderWidth: 1,
+        }
+      ],
+      [
+        {
+          label: 'Third Type',
+          data: [6, 5, 4, 3, 2, 1],
+          backgroundColor: [
+            'rgba(255, 99, 132, 0.5)',
+            'rgba(54, 162, 235, 0.5)',
+            'rgba(255, 206, 86, 0.5)',
+            'rgba(75, 192, 192, 0.5)',
+            'rgba(153, 102, 255, 0.5)',
+            'rgba(255, 159, 64, 0.5)',
+          ],
+          borderWidth: 1,
+        }
+      ]
     ]
 
-    changeData(chart, label[0], secondData);
+    changeData(chart, label[adjectiveLevel], secondData[adjectiveLevel]);
+    adjectiveLevel += 1;
 
     console.log('click click')
   }
