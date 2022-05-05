@@ -191,14 +191,18 @@ function Explore(){
           </div>
 
           <div className = "wrapper flex items-center justify-between px-[5rem] w-[100%] relative z-[3]">
-            <div class="music flex flex-col items-center text-center justify-center w-[50%]">
-              <Player
-                testID = "player"
-                currentSongIndex={currentSongIndex}
-                setCurrentSongIndex={setCurrentSongIndex}
-                nextSongIndex={nextSongIndex}
-                songs={songs}
-              />
+
+              <div class="music flex flex-col items-center text-center justify-center w-[50%]">
+                  <img src={require("../img/music.jpg")}
+                       className="border-[2px] border-[#67748a] rounded-[13px] h-[13rem]"
+                  />
+                  <Player
+                    testID = "player"
+                    currentSongIndex={currentSongIndex}
+                    setCurrentSongIndex={setCurrentSongIndex}
+                    nextSongIndex={nextSongIndex}
+                    songs={songs}
+                  />
             </div>
               
             <div class="chart relative w-[50%]">

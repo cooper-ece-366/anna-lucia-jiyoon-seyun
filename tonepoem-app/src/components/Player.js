@@ -1,3 +1,7 @@
+//Coded by Seyun Kim
+//This function defines and displays audio player and handles audio player control such as skipping and going
+//back to the previous music
+
 import React, {useState, useRef, useEffect} from 'react'
 import PlayerDetails from "./PlayerDetails";
 import PlayerControls from "./PlayerControls";
