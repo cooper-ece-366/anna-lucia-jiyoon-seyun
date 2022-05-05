@@ -1,5 +1,5 @@
 import React, { Component, MouseEvent, useRef, useEffect, useState } from 'react'
-import Player from '../components/Player';
+import Player from '../audio_player/Player';
 
 import {
     Chart as ChartJS,

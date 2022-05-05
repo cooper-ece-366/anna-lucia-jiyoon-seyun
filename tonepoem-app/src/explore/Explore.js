@@ -1,9 +1,8 @@
 import React, {useState} from 'react'
 import ReactWordcloud from 'react-wordcloud'
-import MiniPlayer from '../mini_components/MiniPlayer'
-
-// const [currentPage, setCurrentPage] = useState(1);
-// const [postsPerPage, setPostsPerPage] = useState(10);
+import MiniPlayer from '../mini_audio_player/MiniPlayer'
+import ReactPaginate from 'react-paginate'
+import BarChart from 'react-bar-chart';
 
 const words = [
   {
@@ -27,6 +26,7 @@ const words = [
   },
 ]
 
+
 const callbacks = {
   //getWordColor: word => word.value > 50 ? "blue" : "red",
   //onWordClick: console.log,
@@ -39,7 +39,7 @@ const options = {
   rotationAngles: [0, 180],
 };
 
-const size = [600, 400];
+const size = [600, 200];
 
 const songs = [
     {
@@ -74,6 +74,12 @@ const songs = [
     }
 ];
 
+const handlePageClick = (event) => {
+
+    console.log("page clicked")
+    console.log(event.selected)
+}
+
 const Explore = () => {
   return(
     <div>
@@ -81,38 +87,146 @@ const Explore = () => {
         <b>Explore</b>
       </div>
 
-        <div className = "wrapper flex items-center justify-between px-[5rem] w-[100%] relative z-[3]">
-            <div className="MiniPlayer flex flex-col items-center justify-center h-[100%] w-[50%] text-sm">
+        <div className = "wrapper flex flex-col items-center w-[100%] h-[100%]">
+            <div className="MiniPlayerStat flex flex-row items-center justify-center text-sm">
                 <MiniPlayer
                     song={songs[0]}
                 />
-                <MiniPlayer
-                    song={songs[1]}
+                <ReactWordcloud
+                    callbacks = {callbacks}
+                    options = {options}
+                    size = {size}
+                    words = {words}
                 />
+            </div>
+            <div className="MiniPlayerStat flex flex-row items-center justify-center text-sm">
                 <MiniPlayer
-                    song={songs[2]}
+                    song={songs[0]}
                 />
+                <ReactWordcloud
+                    callbacks = {callbacks}
+                    options = {options}
+                    size = {size}
+                    words = {words}
+                />
+            </div>
+            <div className="MiniPlayerStat flex flex-row items-center justify-center text-sm">
                 <MiniPlayer
-                    song={songs[3]}
+                    song={songs[0]}
                 />
+                <ReactWordcloud
+                    callbacks = {callbacks}
+                    options = {options}
+                    size = {size}
+                    words = {words}
+                />
+            </div>
+            <div className="MiniPlayerStat flex flex-row items-center justify-center  text-sm">
                 <MiniPlayer
-                    song={songs[4]}
+                    song={songs[0]}
                 />
-
-
-
+                <ReactWordcloud
+                    callbacks = {callbacks}
+                    options = {options}
+                    size = {size}
+                    words = {words}
+                />
+            </div>
+            <div className="MiniPlayerStat flex flex-row items-center justify-center text-sm">
+                <MiniPlayer
+                    song={songs[0]}
+                />
+                <ReactWordcloud
+                    callbacks = {callbacks}
+                    options = {options}
+                    size = {size}
+                    words = {words}
+                />
+            </div>
+            <div className="MiniPlayerStat flex flex-row items-center justify-center text-sm">
+                <MiniPlayer
+                    song={songs[0]}
+                />
+                <ReactWordcloud
+                    callbacks = {callbacks}
+                    options = {options}
+                    size = {size}
+                    words = {words}
+                />
             </div>
 
-            <div className="headings flex flex-col items-start justify-center h-[100%] w-[50%] text-[3rem]">
-              <ReactWordcloud
-                  callbacks = {callbacks}
-                  options = {options}
-                  size = {size}
-                  words = {words}
-              />
 
-            </div>
 
+            {/*<div className="MiniPlayer flex flex-col items-center justify-center h-[100%] w-[50%] text-sm">*/}
+            {/*    <MiniPlayer*/}
+            {/*        song={songs[0]}*/}
+            {/*    />*/}
+            {/*    <MiniPlayer*/}
+            {/*        song={songs[1]}*/}
+            {/*    />*/}
+            {/*    <MiniPlayer*/}
+            {/*        song={songs[2]}*/}
+            {/*    />*/}
+            {/*    <MiniPlayer*/}
+            {/*        song={songs[3]}*/}
+            {/*    />*/}
+            {/*    <MiniPlayer*/}
+            {/*        song={songs[4]}*/}
+            {/*    />*/}
+            {/*    <MiniPlayer*/}
+            {/*        song={songs[0]}*/}
+            {/*    />*/}
+            {/*    <MiniPlayer*/}
+            {/*        song={songs[1]}*/}
+            {/*    />*/}
+            {/*    <MiniPlayer*/}
+            {/*        song={songs[2]}*/}
+            {/*    />*/}
+            {/*    <MiniPlayer*/}
+            {/*        song={songs[3]}*/}
+            {/*    />*/}
+            {/*    <MiniPlayer*/}
+            {/*        song={songs[4]}*/}
+            {/*    />*/}
+
+            {/*</div>*/}
+
+            {/*<div className="headings flex flex-col items-start justify-center h-[100%] w-[50%] text-[3rem]">*/}
+            {/*  <ReactWordcloud*/}
+            {/*      callbacks = {callbacks}*/}
+            {/*      options = {options}*/}
+            {/*      size = {size}*/}
+            {/*      words = {words}*/}
+            {/*  />*/}
+              {/*      <BarChart*/}
+              {/*        ylabel='adjectives'*/}
+              {/*        width={500}*/}
+              {/*        height={400}*/}
+              {/*        margin={margin}*/}
+              {/*        data={words}*/}
+              {/*        // onBarClick={this.handleBarClick}/>*/}
+              {/*          />*/}
+            {/*</div>*/}
+
+        </div>
+        <div className="paginate py-[4rem]">
+            <ReactPaginate
+                pageCount={10}
+                previousLabel={'<<'}
+                nextLabel={'>>'}
+                marginPagesDisplayed={3}
+                containerClassName={'pagination justify-content-center'}
+                pageClassName={'page-item'}
+                pageLinkClassName={'page-link'}
+                onPageChange={handlePageClick}
+                previousClassName={'page-item'}
+                previousLinkClassName={'page-link'}
+                nextClassName={'page-item'}
+                nextLinkClassName={'page-link'}
+                breakClassName={'page-item'}
+                breakLinkClassName={'page-link'}
+                activeClassName={'active'}
+            />
         </div>
     </div>
   );

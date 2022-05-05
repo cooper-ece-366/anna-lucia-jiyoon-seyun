@@ -4,7 +4,7 @@
 //whether correct functions are called when they are clicked.
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
-import PlayerControls from '../components/PlayerControls';
+import PlayerControls from './/PlayerControls';
 import Player from "./Player";
 
 it("check if button exists", () => {
