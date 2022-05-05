@@ -1,27 +1,19 @@
 import React from 'react' // THIS LINE IS REQUIRED
-import ReactDOM from 'react-dom'
-import './Navbar.css';
-import Login from "./login/Login.js"
-
-const styleSheet = {
-    root:{
-        display: "flex",
-        justifyContent: "center",
-        alignSelf: "center",
-        alignContent: "center"
-    }
-}
+import CenterMenu from './CenterMenu'
+import Login from "./login/Login"
 
 const Navbar = () => {
     return (
-        <nav className = "Navbar">
-            <a href = "/" className = "Header">Tone-Poem</a>
-            <div className = "Linkbar">
-                <a href = "/tag" className = "Links">Tag</a>
-                <a href = "/explore" className = "Links">Explore</a>
-                <a href = "/data" className = "Links">Data/API</a>
-                <a href = "/contact" className = "Links">Contact Us</a>
+        <nav className = "header bg-[#081730] flex items-center justify-between px-[5rem] py-[2.4rem] text-[0.9rem] text-white">
+            <a href = "/" className="text-2xl"><b>TonePoem</b></a>
+
+            <CenterMenu />
+
+            <div className="buttons flex">
                 <Login />
+                {/* <button className="bg-[#232A4E] border-[2px] rounded-[10px] border-[#232A4E] px-[25px] py-[7px]">
+                    Sign Up
+                </button> */}
             </div>
         </nav>
     );
