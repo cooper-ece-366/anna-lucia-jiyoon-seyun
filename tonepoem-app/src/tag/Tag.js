@@ -1,6 +1,8 @@
+
 import React, { Component, MouseEvent, useRef, useEffect, useState } from 'react'
 import Player from '../audio_player/Player';
 
+//Coded by: Jiyoon Pyo
 import {
     Chart as ChartJS,
     RadialLinearScale,
@@ -35,7 +37,7 @@ import {
       }
     ],
   };
-  
+//Coded by: Jiyoon Pyo
 export const options = {
   scales: {
     r: {
@@ -43,20 +45,20 @@ export const options = {
     }
   }                                                                                                   
 }
-
+//Coded by: Jiyoon Pyo
   function changeData(chart, label, data){
     chart.data.labels = label;
     chart.data.datasets = data;  
     chart.update();
   }
-  
+//Coded by: Jiyoon Pyo
   function triggerTooltip(chart){
     var tooltip = chart === null || chart === void 0 ? void 0: chart.Tooltip;
   
     if(!tooltip) {
       return;
     }
-  
+
     if(tooltip.getActiveElements().length > 0) {
       tooltip.setActiveElements([], {x: 0, y: 0});
     }
@@ -85,6 +87,7 @@ export const options = {
 // Reference: Custom On Click Actions: https://www.chartjs.org/docs/latest/configuration/legend.html
 
 function Explore(){
+    //Coded by: Jiyoon Pyo
     const chartRef = useRef();
     var adjectiveLevel = 0;
 
@@ -130,7 +133,7 @@ function Explore(){
 
         console.log('click click')
     }
-
+//Coded by: Seyun Kim
     useEffect(() => {
         const chart = chartRef.current;
 
@@ -184,6 +187,7 @@ function Explore(){
     })
   }, [currentSongIndex])
 
+    //Coded by: Jiyoon Pyo
     return(
         <div>
           <div class="text-xl text-[#67748a] text-left px-[5rem] py-[1rem]">

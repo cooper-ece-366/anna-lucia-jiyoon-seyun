@@ -1,3 +1,8 @@
+/*Code written by : Jiyoon Pyo, Seyun Kim*/
+/*File objective: Display Explore page where user can listen to audio data samples and
+* discover statistics of adjectives selected by other users for the corresponding audio sample.
+* Users can also navigate to a specific tag page where they can tag adjectives for each audio sample.
+* */
 import React, {useState} from 'react'
 import ReactWordcloud from 'react-wordcloud'
 import MiniPlayer from '../mini_audio_player/MiniPlayer'
@@ -25,7 +30,6 @@ const words = [
     value: 1200,
   },
 ]
-
 
 const callbacks = {
   //getWordColor: word => word.value > 50 ? "blue" : "red",
@@ -74,12 +78,14 @@ const songs = [
     }
 ];
 
+//Function coded by: Seyun Kim
 const handlePageClick = (event) => {
 
     console.log("page clicked")
     console.log(event.selected)
 }
 
+//Coded by: Jiyoon Pyo, Seyun Kim
 const Explore = () => {
   return(
     <div>

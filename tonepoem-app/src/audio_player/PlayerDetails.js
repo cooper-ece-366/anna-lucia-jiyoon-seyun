@@ -1,8 +1,6 @@
-//Code written by Seyun Kim
-//This function displays the detail of the song being played,
-//including song title and artist
 import React from 'react'
 
+//Coded by: Jiyoon Pyo
 function PlayerDetails(props) {
     return (
         <div className="c-player--details">

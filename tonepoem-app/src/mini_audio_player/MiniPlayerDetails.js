@@ -3,6 +3,7 @@
 //including song title and artist
 import React from 'react'
 
+//Coded by: Jiyoon Pyo
 function MiniPlayerDetails(props) {
     return (
 

@@ -9,6 +9,7 @@ import Tag from '../tag/Tag';
 import Explore from '../explore/Explore';
 import Contact from '../contact/Contact';
 
+//Function coded by: Jiyoon Pyo
 const App = () => {
   return(
     <div className="App bg-[#020917] text-white overflow-hidden">

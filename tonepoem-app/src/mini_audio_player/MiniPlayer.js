@@ -7,6 +7,7 @@ import ReactPlayer from "react-player";
 import ReactAudioPlayer from "react-audio-player";
 // import ReactAudioPlayer from 'react-audio-player';
 
+//Coded by: Seyun Kim
 function MiniPlayer(props) {
     return (
         <div className="mini-audio-player py-[0.8rem]">
