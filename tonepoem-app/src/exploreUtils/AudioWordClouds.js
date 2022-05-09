@@ -1,18 +1,40 @@
-import React from 'react'
+import React, {useState} from 'react'
 import MiniPlayer from '../mini_audio_player/MiniPlayer'
 import ReactWordcloud from 'react-wordcloud'
+import {
+    BrowserRouter as Router,
+    generatePath,
+    Switch,
+    Route,
+    useHistory,
+    useParams
+  } from "react-router-dom";
+
+
 
 const AudioWordClouds = ({ callbacks, options, size, words, sounds, loading}) => {
-    if(loading) {
-        return <h2>Loading...</h2>
-    }
+    // if(loading) {
+    //     return <h2>Loading...</h2>
+    // }
 
+    const [id, setId] = useState();
+    const history = useHistory();
+
+    const handleProceed = (event) => {
+        console.log(id);
+        id && history.push(generatePath("/tag/:id", { id }));
+    }
+    console.log(id);
     return (
+        
+
         <div>
             <div className="list-group flex flex-col justify-center items-center" >
+                    {/* let { _id } = useParams(); */}
                     {sounds.map(sound => {
-                        // console.log(sound);
+                        
                         return(
+                            
                             <div key={sound._id} className="nothing flex flex-row justify-center items-center text-sm">
                             <MiniPlayer
                                 song={sound}
@@ -24,6 +46,26 @@ const AudioWordClouds = ({ callbacks, options, size, words, sounds, loading}) =>
                                 size = {size}
                                 words = {words}
                             />
+
+                            <button onClick={() => 
+                                {setId(sound._id);
+                                handleProceed();
+                                }
+                            }>
+                                More
+                            </button> 
+
+                            {/* <button onClick={handleProceed}>
+                                More
+                            </button> */}
+
+                            {/* <a href="http://localhost:3000/tag/${}">
+                                <button onClick={handleProceed}>
+                                    More
+                                </button>
+                            </a> */}
+
+                            
                         </div>
                     )
                        
@@ -35,3 +77,22 @@ const AudioWordClouds = ({ callbacks, options, size, words, sounds, loading}) =>
 }
 
 export default AudioWordClouds
+
+
+// const Navigation = () => {
+//     return (
+//         <div>
+//             <Router>
+//                 <Switch>
+//                     <Route path="/tag/:id">
+//                         <AudioWordClouds />
+//                     </Route>
+//                     {/* <Route path="/">
+//                         <
+//                     </Route> */}
+//                 </Switch>
+//             </Router>
+//         </div>
+
+//     )
+// }
