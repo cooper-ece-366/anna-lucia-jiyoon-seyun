@@ -110,13 +110,13 @@ const Tag = (props) => {
           </div>
 
           <div className = "wrapper flex items-center justify-between px-[5rem] w-[100%] relative z-[3]">
-            <div class="music flex flex-col items-center text-center justify-center w-[50%]">
+            <div className="music flex flex-col items-center text-center justify-center w-[50%]">
                 <MiniPlayer
                     song={sound}
                 />
             </div>
                   
-            <div class="chart relative w-[50%]">
+            <div className="chart relative w-[50%]">
               <Pie 
                 ref={chartRef}
                 data={data} 
