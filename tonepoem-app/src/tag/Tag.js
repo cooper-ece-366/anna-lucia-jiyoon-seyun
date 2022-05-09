@@ -1,3 +1,7 @@
+/* Code by Seyun Kim and Jiyoon Pyo */
+// Music Player coded by Seyun Kim
+// Pie Chart coded by Jiyoon Pyo
+
 // import React, { useState, useEffect } from "react";
 // import { useParams, useNavigate } from "react-router";
  

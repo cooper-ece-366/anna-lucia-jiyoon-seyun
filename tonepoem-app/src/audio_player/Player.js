@@ -4,7 +4,7 @@ import PlayerControls from "./PlayerControls";
 import ReactPlayer from "react-player";
 import ReactAudioPlayer from 'react-audio-player';
 
-/* Coded by Seyun Kim */
+//Function coded by: Seyun Kim
 function Player(props) {
     // control what song is played
     // const currentSongIndex = 2;

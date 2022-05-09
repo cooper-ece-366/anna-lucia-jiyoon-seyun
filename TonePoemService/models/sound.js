@@ -1,3 +1,4 @@
+//Coded by: Jiyoon Pyo
 const mongoose = require('mongoose');
 
 const soundSchema = new mongoose.Schema({

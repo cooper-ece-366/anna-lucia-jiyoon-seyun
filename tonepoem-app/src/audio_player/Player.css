@@ -1,0 +1,31 @@
+/*Coded by Seyun Kim */
+/*Configures audio player style*/
+
+.full-audio-player {
+    display: flex;
+    flex-direction: row;
+    height: 40px;
+}
+
+
+.player-wrapper {
+    position: center;
+    padding-top: 56.25% /* Player ratio: 100 / (1280 / 720) */
+}
+
+.react-player {
+    position: center;
+    top: 0;
+    left: 0;
+}
+.c-player--details .details-title {
+    color: black;
+    font-size: 24px;
+}
+
+.c-player--details .details-artist {
+    color: #444444;
+    font-size: 18px;
+}
+
+

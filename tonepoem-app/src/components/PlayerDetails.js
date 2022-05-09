@@ -1,5 +1,6 @@
 import React from 'react'
 
+//Function coded by: Seyun Kim
 function PlayerDetails(props) {
     return (
         <div className="c-player--details">

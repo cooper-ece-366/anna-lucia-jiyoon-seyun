@@ -13,6 +13,7 @@ import SoundInfo from '../sounds/SoundInfo';
 //import SoundEdit from '../sounds/SoundEdit';
 //import SoundAdd from '../sounds/SoundAdd';
 
+//Routing Completed by: Jiyoon Pyo
 const App = () => {
   return(
     <div className="App bg-[#020917] text-white overflow-hidden">

@@ -1,6 +1,8 @@
 import React from 'react';
 import GoogleLogin from 'react-google-login';
 
+//Coded by: Lucia Rhode
+//Button Design by: Jiyoon Pyo
 const Login = () => {
     const responseGoogle = (response) => {
       console.log(response);

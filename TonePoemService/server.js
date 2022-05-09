@@ -1,3 +1,5 @@
+//Coded by: Jiyoon Pyo
+
 const { response } = require('express');
 const express = require('express');
 
@@ -8,13 +10,6 @@ const corsOptions = {
     credentials: true,
     optionSuccessStatus: 200
 }
-// const corsOpts = {
-//     origin: '*',
-//     credentials: true,
-//     methods: ['GET','POST','HEAD','PUT','PATCH','DELETE'],
-//     allowedHeaders: ['Content-Type'],
-//     exposedHeaders: ['Content-Type']
-// };
 const router = require('./routes/index');
 
 const app = express();

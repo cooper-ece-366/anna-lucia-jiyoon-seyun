@@ -1,5 +1,6 @@
 import React from 'react' // THIS LINE IS REQUIRED
 
+//Coded by: Jiyoon Pyo
 function CenterMenu() {
     return (
         <div className = "menu flex">

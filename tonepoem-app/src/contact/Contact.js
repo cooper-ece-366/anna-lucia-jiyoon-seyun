@@ -1,5 +1,6 @@
 import React from 'react' // THIS LINE IS REQUIRED
 
+//Function coded by: Jiyoon Pyo
 const Contact = () => {
     return (
         <div className="Contact px-[5rem] py-[2rem]">

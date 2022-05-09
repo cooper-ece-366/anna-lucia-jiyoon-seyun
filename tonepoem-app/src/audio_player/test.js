@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-//Test Implemented by: Seyun Kim
+//Test implemented by: Seyun Kim
 class App extends Component {
     state = {
         audio: new Audio(sound),

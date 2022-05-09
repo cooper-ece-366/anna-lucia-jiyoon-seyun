@@ -1,5 +1,6 @@
 import React from 'react'
 
+//Coded by: Jiyoon Pyo
 const Hero = () => {
     return (
         <div className = "wrapper bg-[#081730] flex items-center justify-between px-[5rem] rounded-b-[5rem] w-[100%] h-[35rem] relative z-[3]">
