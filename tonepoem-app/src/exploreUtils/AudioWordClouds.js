@@ -1,6 +1,8 @@
 import React, {useState} from 'react'
 import MiniPlayer from '../mini_audio_player/MiniPlayer'
 import ReactWordcloud from 'react-wordcloud'
+import styled from 'styled-components';
+
 import {
     BrowserRouter as Router,
     generatePath,
@@ -10,7 +12,15 @@ import {
     useParams
   } from "react-router-dom";
 
-
+const Button = styled.button`
+    background-color: #E9C46A;
+    color: black;
+    padding: 5px 15px;
+    border-radius: 6px;
+    outline: 0;
+    box-shadow: 0px 1.2px 1.2px black;
+`
+  
 
 const AudioWordClouds = ({ callbacks, options, size, words, sounds, loading}) => {
     // if(loading) {
@@ -47,13 +57,14 @@ const AudioWordClouds = ({ callbacks, options, size, words, sounds, loading}) =>
                                 words = {words}
                             />
 
-                            <button onClick={() => 
+                            <Button className="button w-[100px]" 
+                            onClick={() => 
                                 {setId(sound._id);
                                 handleProceed();
                                 }
                             }>
-                                More
-                            </button> 
+                                <strong>More</strong>
+                            </Button> 
 
                             {/* <button onClick={handleProceed}>
                                 More
