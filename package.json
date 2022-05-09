@@ -19,6 +19,7 @@
   },
   "devDependencies": {
     "@testing-library/react": "^13.1.1",
+    "concurrently": "^7.1.0",
     "jest-dom": "^4.0.0",
     "nodemon": "^2.0.16",
     "react-google-login": "^5.2.2",
