@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+
 import Hero from './Hero';
 import Purpose from './Purpose'
 
-const Home = () => {
+//Coded by: Jiyoon Pyo
+const Home = () => {     
     return (
         <div className="Home">
             <Hero />

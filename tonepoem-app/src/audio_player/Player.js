@@ -4,13 +4,21 @@ import PlayerControls from "./PlayerControls";
 import ReactPlayer from "react-player";
 import ReactAudioPlayer from 'react-audio-player';
 
+<<<<<<< HEAD
+<<<<<<<< HEAD:tonepoem-app/src/audio_player/Player.js
 //Function coded by: Seyun Kim
+========
+/* Coded by Seyun Kim */
+>>>>>>>> 4965377a91fe991d74fcd1b8d0badf48007bdaa5:tonepoem-app/src/components/Player.js
 function Player(props) {
     // control what song is played
     // const currentSongIndex = 2;
     const [isPlaying, setIsPlaying] = useState(false);
-
-
+=======
+//Function coded by: Seyun Kim
+function Player(props) {
+    const [ isPlaying, setIsPlaying ] = useState(false);
+>>>>>>> 4965377a91fe991d74fcd1b8d0badf48007bdaa5
 
     const SkipSong = (forwards = true) => {
         if (forwards) {
@@ -47,11 +55,19 @@ function Player(props) {
                     autoPlay={false}
                     controls
                 />
+<<<<<<< HEAD
                 <PlayerControls
                     isPlaying={isPlaying}
                     setIsPlaying={setIsPlaying}
                     SkipSong={SkipSong}
                 />
+=======
+                {/* <PlayerControls
+                    isPlaying={isPlaying}
+                    setIsPlaying={setIsPlaying}
+                    SkipSong={SkipSong}
+                /> */}
+>>>>>>> 4965377a91fe991d74fcd1b8d0badf48007bdaa5
             </div>
             <p>Next up: </p>
             <p><strong>{props.songs[props.nextSongIndex].title}</strong> by <strong>{props.songs[props.nextSongIndex].artist}</strong></p>

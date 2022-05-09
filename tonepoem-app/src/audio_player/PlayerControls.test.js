@@ -7,6 +7,7 @@ import { render, fireEvent } from '@testing-library/react';
 import PlayerControls from './/PlayerControls';
 import Player from "./Player";
 
+//Test implemented by: Seyun Kim
 it("check if button exists", () => {
     const { queryByTitle } = render(<PlayerControls />);
     const btn = queryByTitle("button1");

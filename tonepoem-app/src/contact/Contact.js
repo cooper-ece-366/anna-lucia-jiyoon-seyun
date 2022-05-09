@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactWordcloud from 'react-wordcloud'
 
+<<<<<<< HEAD
 const words = [
     {
         text: 'told',
@@ -42,6 +43,14 @@ const Explore = () => {
         <div>
             <div className="text-xl text-[#67748a] text-left px-[5rem] py-[1rem]">
                 <b>Explore</b>
+=======
+//Function coded by: Jiyoon Pyo
+const Contact = () => {
+    return (
+        <div className="Contact px-[5rem] py-[2rem]">
+            <div className="text-2xl">
+                Contact Us
+>>>>>>> 4965377a91fe991d74fcd1b8d0badf48007bdaa5
             </div>
 
             <div className="headings flex flex-col items-start justify-center h-[100%] text-[3rem]">
