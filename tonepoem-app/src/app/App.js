@@ -1,13 +1,17 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'; // Do npm install react-router-dom@5
-import './App.css';
 
 import Navbar from '../navbar/Navbar';
 import Home from '../home/Home';
 
 import Tag from '../tag/Tag';
+//import RecordList from '../tag/RecordList';
 import Explore from '../explore/Explore';
 import Contact from '../contact/Contact';
+import SoundList from '../sounds/SoundList';
+import SoundInfo from '../sounds/SoundInfo';
+//import SoundEdit from '../sounds/SoundEdit';
+//import SoundAdd from '../sounds/SoundAdd';
 
 const App = () => {
   return(
@@ -20,6 +24,22 @@ const App = () => {
             <Route exact path = "/">
               <Home />
             </Route>
+
+            <Route exact path = "/sounds">
+              <SoundList />
+            </Route>
+
+            <Route exact path = "/sounds/:_id">
+              <SoundInfo />
+            </Route>
+
+            {/* <Route exact path = "/sounds/:_id/edit">
+              <SoundEdit />
+            </Route>+
+
+            <Route exact path = "/sounds/new">
+              <SoundAdd />
+            </Route> */}
 
             <Route exact path = "/explore">
               <Explore />

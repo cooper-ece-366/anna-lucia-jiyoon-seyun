@@ -4,7 +4,7 @@ const Contact = () => {
     return (
         <div className="Contact px-[5rem] py-[2rem]">
             <div className="text-2xl">
-                Contact Tone-Poem
+                Contact Us
             </div>
 
             <div className="email py-[0.7rem]">

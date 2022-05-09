@@ -1,217 +1,272 @@
-import React, { Component, MouseEvent, useRef, useEffect, useState } from 'react'
-import Player from '../components/Player';
+// import React, { useState, useEffect } from "react";
+// import { useParams, useNavigate } from "react-router";
+ 
+// export default function Edit() {
+//  const [form, setForm] = useState({
+//    name: "",
+//    position: "",
+//    level: "",
+//    records: [],
+//  });
+//  const params = useParams();
+//  const navigate = useNavigate();
+ 
+//  useEffect(() => {
+//    async function fetchData() {
+//      const id = params.id.toString();
+//      const response = await fetch(`http://localhost:8080/record/${params.id.toString()}`);
+ 
+//      if (!response.ok) {
+//        const message = `An error has occurred: ${response.statusText}`;
+//        window.alert(message);
+//        return;
+//      }
+ 
+//      const record = await response.json();
+//      if (!record) {
+//        window.alert(`Record with id ${id} not found`);
+//        navigate("/");
+//        return;
+//      }
+ 
+//      setForm(record);
+//    }
+ 
+//    fetchData();
+ 
+//    return;
+//  }, [params.id, navigate]);
+ 
+//  // These methods will update the state properties.
+//  function updateForm(value) {
+//    return setForm((prev) => {
+//      return { ...prev, ...value };
+//    });
+//  }
+ 
+//  async function onSubmit(e) {
+//    e.preventDefault();
+//    const editedPerson = {
+//      name: form.name,
+//      position: form.position,
+//      level: form.level,
+//    };
+ 
+//    // This will send a post request to update the data in the database.
+//    await fetch(`http://localhost:8080/update/${params.id}`, {
+//      method: "POST",
+//      body: JSON.stringify(editedPerson),
+//      headers: {
+//        'Content-Type': 'application/json'
+//      },
+//    });
+ 
+//    navigate("/");
+//  }
+ 
+//  // This following section will display the form that takes input from the user to update the data.
+//  return (
+//    <div>
+//      <h3>Update Record</h3>
+//      <form onSubmit={onSubmit}>
+//        <div className="form-group">
+//          <label htmlFor="name">Name: </label>
+//          <input
+//            type="text"
+//            className="form-control"
+//            id="name"
+//            value={form.name}
+//            onChange={(e) => updateForm({ name: e.target.value })}
+//          />
+//        </div>
+//        <div className="form-group">
+//          <label htmlFor="position">Position: </label>
+//          <input
+//            type="text"
+//            className="form-control"
+//            id="position"
+//            value={form.position}
+//            onChange={(e) => updateForm({ position: e.target.value })}
+//          />
+//        </div>
+//        <div className="form-group">
+//          <div className="form-check form-check-inline">
+//            <input
+//              className="form-check-input"
+//              type="radio"
+//              name="positionOptions"
+//              id="positionIntern"
+//              value="Intern"
+//              checked={form.level === "Intern"}
+//              onChange={(e) => updateForm({ level: e.target.value })}
+//            />
+//            <label htmlFor="positionIntern" className="form-check-label">Intern</label>
+//          </div>
+//          <div className="form-check form-check-inline">
+//            <input
+//              className="form-check-input"
+//              type="radio"
+//              name="positionOptions"
+//              id="positionJunior"
+//              value="Junior"
+//              checked={form.level === "Junior"}
+//              onChange={(e) => updateForm({ level: e.target.value })}
+//            />
+//            <label htmlFor="positionJunior" className="form-check-label">Junior</label>
+//          </div>
+//          <div className="form-check form-check-inline">
+//            <input
+//              className="form-check-input"
+//              type="radio"
+//              name="positionOptions"
+//              id="positionSenior"
+//              value="Senior"
+//              checked={form.level === "Senior"}
+//              onChange={(e) => updateForm({ level: e.target.value })}
+//            />
+//            <label htmlFor="positionSenior" className="form-check-label">Senior</label>
+//        </div>
+//        </div>
+//        <br />
+ 
+//        <div className="form-group">
+//          <input
+//            type="submit"
+//            value="Update Record"
+//            className="btn btn-primary"
+//          />
+//        </div>
+//      </form>
+//    </div>
+//  );
+// }
+
+import React, { Component, MouseEvent, useRef, useEffect, useState } from 'react';
+
+import { InteractionItem } from 'chart.js';
+import { 
+  Chart as ChartJS, 
+  ArcElement, 
+  Tooltip, 
+  Legend 
+} from 'chart.js';
 
 import {
-    Chart as ChartJS,
-    RadialLinearScale,
-    ArcElement,
-    Tooltip,
-    Legend,
-  } from 'chart.js';
-  import { PolarArea } from 'react-chartjs-2';
+  Pie,
+  getDatasetAtEvent,
+  getElementAtEvent,
+  getElementsAtEvent,
+} from 'react-chartjs-2';
 
-  ChartJS.register(
-    RadialLinearScale, 
-    ArcElement, 
-    Tooltip, 
-    Legend
-  );
- 
-  export const data = {
-    labels: ['One', 'Two', 'Three', 'Four', 'Five', 'Six'],
-    datasets: [
-      {
-        label: 'First Type',
-        data: [12, 19, 3, 5, 2, 3],
-        backgroundColor: [
-          'rgba(255, 99, 132)',
-          'rgba(54, 162, 235)',
-          'rgba(255, 206, 86)',
-          'rgba(75, 192, 192)',
-          'rgba(153, 102, 255)',
-          'rgba(255, 159, 64)',
-        ],
-        borderWidth: 1,
-      }
-    ],
-  };
-  
-export const options = {
-  scales: {
-    r: {
-      display: false
-    }
-  }                                                                                                   
+ChartJS.register(
+  ArcElement, 
+  Tooltip, 
+  Legend
+);
+
+export const data = {
+  labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+  datasets: [
+    {
+      label: '# of Votes',
+      data: [1, 1, 1, 1, 1, 1],
+      backgroundColor: [
+        'rgba(255, 99, 132, 1)',
+        'rgba(54, 162, 235, 1)',
+        'rgba(255, 206, 86, 1)',
+        'rgba(75, 192, 192, 1)',
+        'rgba(153, 102, 255, 1)',
+        'rgba(255, 159, 64, 1)',
+      ],
+      borderColor: [
+        'rgba(255, 99, 132, 1)',
+        'rgba(54, 162, 235, 1)',
+        'rgba(255, 206, 86, 1)',
+        'rgba(75, 192, 192, 1)',
+        'rgba(153, 102, 255, 1)',
+        'rgba(255, 159, 64, 1)',
+      ],
+      borderWidth: 1,
+    },
+  ],
+};
+
+function changeData(chart, label){
+  chart.data.labels = label;
+  chart.update();
 }
 
-  function changeData(chart, label, data){
-    chart.data.labels = label;
-    chart.data.datasets = data;  
-    chart.update();
+const Tag = () => {
+
+  const printElementAtEvent = function (dataset) {
+    console.log('test');
   }
+  // var printElementAtEvent = (chart, element) => {
+  //   if(!element[0].length){
+  //     return;
+  //   }
+
+  //   var index = element[0].index;
+
+  //   console.log('here');
+  //   return index;
+  //   //console.log(data.labels[index]);
+  // }
+//   var printDatasetAtEvent = function (dataset) {
+//     if (!dataset.length)
+//         return;
+//     var datasetIndex = dataset[0].datasetIndex;
+//     console.log(data.datasets[datasetIndex].label);
+// };
+
+  // var printDatasetAtEvent = function (dataset){
+  //   if(!dataset.length){
+  //     return;
+  //   }
+
+  //   var a = dataset[0];
+  //   var datasetIndex = a.datasetIndex;
+  //   var index = a.index;
+
+  //   console.log(data.labels[index], data.datasets[datasetIndex].data[index])
+  // }
   
-  function triggerTooltip(chart){
-    var tooltip = chart === null || chart === void 0 ? void 0: chart.Tooltip;
-  
-    if(!tooltip) {
+
+  const chartRef = useRef();
+  var adjectiveLevel = 0;
+
+  const onClick = (event) => {
+    const chart = chartRef.current;
+    const label = [['1', '2', '3', '4', '5', '6'], ['a', 'b', 'c', 'd', 'e', 'f']];
+
+    if(!chart) {
       return;
     }
-  
-    if(tooltip.getActiveElements().length > 0) {
-      tooltip.setActiveElements([], {x: 0, y: 0});
-    }
-  
-    else {
-      var chartArea = chart.chartArea;
-      tooltip.setActiveElements([
-        {
-          datasetIndex: 0,
-          index: 2,
-        },
-        {
-          datasetIndex: 1,
-          index: 2,
-        },
-      ], {
-        x: (chartArea.left + chartArea.right) / 2,
-        y: (chartArea.top + chartArea.bottom) / 2,
-      });
-    }
-    chart.update();
-  
+
+    // console.log(getDatasetAtEvent(chart, event));
+    // console.log(getElementAtEvent(chart, event))
+    // console.log(getElementsAtEvent(chart, event));
+
+    console.log(printElementAtEvent(chart, getElementAtEvent(chart, event)));
+    
+    changeData(chart, label[adjectiveLevel]);
+    adjectiveLevel += 1;
   }
 
-// Actions: https://www.chartjs.org/docs/latest/samples/advanced/progress-bar.html
-// Reference: Custom On Click Actions: https://www.chartjs.org/docs/latest/configuration/legend.html
-
-function Explore(){
-    const chartRef = useRef();
-    var adjectiveLevel = 0;
-
-    const onClick = () => {
-        const chart = chartRef.current;
-
-        const label = [['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'], ['a', 'b', 'c', 'd', 'e', 'f']];
-        const secondData = [
-        [
-            {
-            label: 'Second Type',
-            data: [1, 2, 3, 4, 5, 6],
-            backgroundColor: [
-                'rgba(255, 99, 132)',
-                'rgba(54, 162, 235)',
-                'rgba(255, 206, 86)',
-                'rgba(75, 192, 192)',
-                'rgba(153, 102, 255)',
-                'rgba(255, 159, 64)',
-            ],
-            borderWidth: 1,
-            }
-        ],
-        [
-            {
-            label: 'Third Type',
-            data: [6, 5, 4, 3, 2, 1],
-            backgroundColor: [
-                'rgba(255, 99, 132)',
-                'rgba(54, 162, 235)',
-                'rgba(255, 206, 86)',
-                'rgba(75, 192, 192)',
-                'rgba(153, 102, 255)',
-                'rgba(255, 159, 64)',
-            ],
-            borderWidth: 1,
-            }
-        ]
-        ]
-
-        changeData(chart, label[adjectiveLevel], secondData[adjectiveLevel]);
-        adjectiveLevel += 1;
-
-        console.log('click click')
-    }
-
-    useEffect(() => {
-        const chart = chartRef.current;
-
-        triggerTooltip(chart);
-    }, []);
-
-  const [songs] = useState([
-    {
-      title: "Food",
-      artist: "AWOL",
-      album: "AWOL - A Way of Life",
-      src: "000002.mp3"
-    },
-    {
-      title: "This World",
-      artist: "AWOL",
-      album: "AWOL - A Way of Life",
-      src: "000005.mp3"
-    },
-    {
-      title: "Freeway",
-      artist: "Kurt Vile",
-      album: "Constant Hitmaker",
-      src: "000010.mp3"
-    },
-    {
-      title: "Queen Of The Wires",
-      artist: "Alec K Redfearn And The Eyesores",
-      album: "The Blind Spot",
-      src: "000140.mp3"
-    },
-    {
-      title: "Ohioo",
-      artist: "Alec K Redfearn And The Eyesores",
-      album: "Every Man For Himself",
-      src: "000148.mp3"
-    }
-  ]);
-
-
-  const [currentSongIndex, setCurrentSongIndex] = useState(0);
-  const [nextSongIndex, setNextSongIndex] = useState(currentSongIndex + 1);
-
-  useEffect(() => {
-    setNextSongIndex(() => {
-      if (currentSongIndex + 1 > songs.length - 1) {
-        return 0;
-      } else {
-        return currentSongIndex + 1;
-      }
-    })
-  }, [currentSongIndex])
-
-    return(
-        <div>
-          <div class="text-xl text-[#67748a] text-left px-[5rem] py-[1rem]">
-            <b>Tag</b>
-          </div>
-
-          <div className = "wrapper flex items-center justify-between px-[5rem] w-[100%] relative z-[3]">
-            <div class="music flex flex-col items-center text-center justify-center w-[50%]">
-              <Player
-                testID = "player"
-                currentSongIndex={currentSongIndex}
-                setCurrentSongIndex={setCurrentSongIndex}
-                nextSongIndex={nextSongIndex}
-                songs={songs}
-              />
-            </div>
-              
-            <div class="chart relative w-[50%]">
-              <PolarArea
-                ref={chartRef}
-                data={data}
-                onClick={onClick}
-                options={options}
-              />
-            </div>
-          </div>
-        </div>
-    );
+  return(
+    <div>
+      <div className="text-xl text-[#67748a] text-left px-[5rem] py-[1rem]">
+        <b>Tag</b>
+      </div>
+      <div className="w-[40%]">
+        <Pie 
+          ref={chartRef}
+          data={data} 
+          onClick={onClick}
+        />
+      </div>
+    </div>
+  );
 }
 
-export default Explore;
+export default Tag;

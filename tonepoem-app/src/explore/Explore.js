@@ -3,22 +3,41 @@ import ReactWordcloud from 'react-wordcloud'
 
 const words = [
   {
-    text: 'told',
+    text: 'a',
     value: 5000,
   },
 
   {
-    text: 'mistake',
+    text: 'b',
     value: 2000,
   },
 
   {
-    text: 'thought',
+    text: 'c',
     value: 3000,
   },
 
   {
-    text: 'bad',
+    text: 'd',
+    value: 1200,
+  },
+  {
+    text: 'e',
+    value: 5000,
+  },
+
+  {
+    text: 'f',
+    value: 2000,
+  },
+
+  {
+    text: 'g',
+    value: 3000,
+  },
+
+  {
+    text: 'h',
     value: 1200,
   },
 ]
@@ -44,16 +63,26 @@ const Explore = () => {
         <b>Explore</b>
       </div>
 
-      <div className="headings flex flex-col items-start justify-center h-[100%] text-[3rem]">
+      <div className="wrapper flex items-center justify-between px-[5rem] w-[100%] relative z-[3]">
+        <div className="music flex flex-col items-center text-center justify-center w-[50%]">
+          {/* <Player
+            testID = "player"
+            currentSongIndex={currentSongIndex}
+            setCurrentSongIndex={setCurrentSongIndex}
+            nextSongIndex={nextSongIndex}
+            songs={songs}
+          /> */}
+        </div>
 
+        <div className="wordcloud flex relative w-[50%]">
+          <ReactWordcloud 
+            callbacks = {callbacks}
+            options = {options}
+            size = {size}
+            words = {words}
+          />
+        </div>
       </div>
-
-      <ReactWordcloud 
-        callbacks = {callbacks}
-        options = {options}
-        size = {size}
-        words = {words} 
-      />
     </div>
   );
 }
