@@ -1,9 +1,9 @@
 
-import React, {useState, useRef, useEffect} from 'react'
-import MiniPlayerControls from "./MiniPlayerControls";
+// import React, {useState, useRef, useEffect} from 'react'
+import React from 'react'
+// import MiniPlayerControls from "./MiniPlayerControls";
 import MiniPlayerDetails from "./MiniPlayerDetails";
 
-import ReactPlayer from "react-player";
 import ReactAudioPlayer from "react-audio-player";
 // import ReactAudioPlayer from 'react-audio-player';
 
