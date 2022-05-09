@@ -1,52 +1,61 @@
 import React from 'react' // THIS LINE IS REQUIRED
 
-//Function coded by: Jiyoon Pyo
+//Function coded by: Anna Konvicka
 const Learn_more = () => {
     return (
-        <div className="Contact px-[5rem] py-[2rem]">
-            <div className="text-2xl">
-                Contact Us
+        //<div className="experience flex flex-col items-center justify-start px-[5rem] bg-[#020917] h-[60rem] pt-[18rem] mt-[-10rem] relative z-[2] rounded-b-[5rem]">
+        //    <div className="headline mt-7 flex flex-col items-center text-[2rem]">
+        <div className="learn_more flex flex-col items-center justify-start px-[5rem] bg-[#020917] h-[60rem] pt-[18rem] mt-[-10rem] relative z-[2] rounded-b-[5rem]">
+            <div className="headline mt-7 flex flex-col items-center text-[3rem]">
+                <span> <b>Learn More</b> </span>
             </div>
 
-            <div className="email py-[0.7rem]">
-                <div className="emailtitle text-[0.9rem] py-[0.5rem]">
-                    Email
+            <div>
+            <span>
+                Below are some resources we referenced and used conceptually in developing this project
+            </span>
+            </div>
+
+            <div className="headline mt-5 flex flex-col items-center text-[2rem]">
+                <span> Ongoing Work </span>
+            </div>
+            <div>
+                <span>
+                    The Steinardt School at NYU is working on SONYC, an ongoing project to monitor and classify features of the acoustic environment in NYC, with a focus on mitigation.
+                </span>
+            </div>
+            <div>
+                <a href="https://steinhardt.nyu.edu/marl/research/projects/sounds-new-york-city-sonyc">SONYC website</a>
+            </div>
+
+
+            <div className="headline mt-5 flex flex-col items-center text-[2rem]">
+                <span> Exploring Audiospace </span>
+            </div>
+            <div>
+                <span>
+                    We were inspired by exploratory methods of classification similar to those of the Spotify algorithm based on using labels to create categories of similar sounds.
+                </span>
+            </div>
+            <div>
+                <a href="https://everynoise.com/">Every Noise at Once</a>
+            </div>
+
+
+            <div className="audiospace py-[0.7rem]">
+                <div className="audiospace_title text-[0.9rem] py-[0.5rem]">
+                    Exploring Audiospace
                 </div>
 
-                <input require
-                       className="text-black w-[75%] h-[2rem] rounded-[0.3rem]"
-                       type="text"
-                       id="myText" />
-
             </div>
-
-            <div className="inquiry py-[0.7rem]">
-                <div className="inquirytitle text-[0.9rem] py-[0.5rem]">
-                    Enquiry
+            <div className="topic_work py-[0.7rem]">
+                <div className="work_title text-[0.9rem] py-[0.5rem]">
+                    Other Work
                 </div>
 
-                <input require
-                       className="text-black w-[75%] h-[15rem] rounded-[0.3rem] align-text-top"
-                       type="text"
-                       id="myText" />
             </div>
-
 
         </div>
-        // <div>
-
-        //     <h2>Why Does it Matter?</h2>
-        //     <span>There are few tagged databases of sounds and of those that are documented, the tags are exclusively literal descriptions. Audio tagging is an important task to be able to predict the tags of audio clips. This is only possible with thoroughly tagged audio-database. With TonePoem, you can explore the audio space associated with words and apply to other various tasks like deep learning.</span>
-
-        //     <h2>How Does it Work?</h2>
-        //     <span>To contribute to the database of audio tags and explore the audio space, listen to a short randomly-selected audio clip and choose from the word wheel the best adjective associated with the audio. Then learn more about the source of the audio clip which will be revealed and what adjectives other users picked! Have fun!</span>
-
-        //     <h2>How Can I Interact with the Data?</h2>
-        //     <span>Have fun <i>tagging</i> audio! You can also <i>explore</i> what sounds have been associated with which adjectives. If you're intersted in <i>playing</i> with the data we collect and <i>expanding</i> on the TONEPOEM mission, all tags are made open-source as are the audio databases we pull from. Check out the Data/API tab and feel free to contact us.</span>
-
-        //     <h2>What Can I Do With It?</h2>
-        //     <span>Explore audio space in a way you never did by associating it with words! Compare your thoughts on the audio sample you tagged with how others did by looking at our distributions! Apply our open audio database for your state of the art deep learning models! And have fun!</span>
-        // </div>
     );
 }
 
