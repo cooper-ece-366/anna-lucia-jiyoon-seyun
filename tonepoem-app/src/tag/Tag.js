@@ -9,7 +9,6 @@ import { Link, useParams } from 'react-router-dom';
 import MiniPlayer from '../mini_audio_player/MiniPlayer';
 import { ADJS } from './adjectives';
 
-import { InteractionItem } from 'chart.js';
 import { 
     Chart as ChartJS, 
     ArcElement, 
@@ -67,19 +66,6 @@ const Tag = () => {
 
     let { _id } = useParams();
 
-    useEffect(function() {
-        async function getSound() {
-            try {
-                const response = await axios.get(`http://localhost:8080/api/sounds/${_id}`);
-                setSound(response.data);
-                //console.log(response.data.adjs.active);
-            } catch(error) {
-                console.log('error', error);
-            }
-        }
-        getSound();
-    }, []);
-
     const chartRef = useRef();
     var adjectiveLevel = 0;
     var item = ADJS;
@@ -106,9 +92,22 @@ const Tag = () => {
 
         if(adjectiveLevel == 2){
           selection = item.children[index].label;
-          //console.log(selection);
+            console.log(selection);
         }
     }
+
+    useEffect(function() {
+      async function getSound() {
+          try {
+              const response = await axios.get(`http://localhost:8080/api/sounds/${_id}`);
+              setSound(response.data);
+              console.log(response.data.adjs.abandoned);
+          } catch(error) {
+              console.log('error', error);
+          }
+      }
+      getSound();
+  }, []);
 
     return(
         <div>

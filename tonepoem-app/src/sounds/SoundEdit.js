@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { get, patch } from 'axios';
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 function SoundEdit(props) {
     const initialState = { title: '', artist: '', album: '', src: '', adjs:{} }
@@ -46,6 +46,7 @@ function SoundEdit(props) {
     //             "Content-Type": "application/json",
     //             Accept: "application/json",
     //         },
+    
     //     })
     //         .then((res) => res.json())
     //         .then(console.log)
