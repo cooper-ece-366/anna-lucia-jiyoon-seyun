@@ -6,9 +6,7 @@ import ReactAudioPlayer from 'react-audio-player';
 
 //Function coded by: Seyun Kim
 function Player(props) {
-    // control what song is played
-    // const currentSongIndex = 2;
-    const [isPlaying, setIsPlaying] = useState(false);
+    const [ isPlaying, setIsPlaying ] = useState(false);
 
     const SkipSong = (forwards = true) => {
         if (forwards) {
@@ -45,11 +43,11 @@ function Player(props) {
                     autoPlay={false}
                     controls
                 />
-                <PlayerControls
+                {/* <PlayerControls
                     isPlaying={isPlaying}
                     setIsPlaying={setIsPlaying}
                     SkipSong={SkipSong}
-                />
+                /> */}
             </div>
             <p>Next up: </p>
             <p><strong>{props.songs[props.nextSongIndex].title}</strong> by <strong>{props.songs[props.nextSongIndex].artist}</strong></p>

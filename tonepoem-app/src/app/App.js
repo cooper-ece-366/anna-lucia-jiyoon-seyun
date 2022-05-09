@@ -26,10 +26,6 @@ const App = () => {
               <Home />
             </Route>
 
-            <Route exact path = "/sounds">
-              <SoundList />
-            </Route>
-
             <Route exact path = "/sounds/:_id">
               <SoundInfo />
             </Route>
@@ -46,7 +42,7 @@ const App = () => {
               <Explore />
             </Route>
 
-            <Route exact path = "/tag">
+            <Route exact path = "/tag/:_id">
               <Tag />
             </Route>
 

@@ -18,6 +18,10 @@ const soundSchema = new mongoose.Schema({
         type: String,
         require: true
     },
+    adj: {
+        type: Object,
+        require: true
+    }
 });
 
 module.exports = mongoose.model('Sound', soundSchema);
