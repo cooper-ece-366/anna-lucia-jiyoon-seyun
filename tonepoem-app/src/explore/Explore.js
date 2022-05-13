@@ -13,6 +13,8 @@ import { Link } from 'react-router-dom';
 import ReactWordcloud from 'react-wordcloud'
 import MiniPlayer from '../mini_audio_player/MiniPlayer'
 import ReactPaginate from 'react-paginate'
+import AudioWordClouds from '../exploreUtils/AudioWordClouds'
+import Pagination from '../exploreUtils/Pagination'
 
 const words = [
   {
@@ -48,72 +50,79 @@ const options = {
 
 const size = [600, 200];
 
-const handlePageClick = (event) => {
 
-    console.log("page clicked")
-    console.log(event.selected)
-}
 
 const Explore = () => {
-    const [ sounds, setSounds ] = useState([]);
+    const [ sounds, setSounds ] = useState([]); 
+    const [loading, setLoading] = useState(false);
+    const [currentPage, setCurrentPage] = useState(1);
+    const [soundsPerPage, setSoundsPerPage] = useState(6);
 
-    useEffect(function() {
-        async function getSounds() {
-            try {
-                const response = await axios.get("http://localhost:8080/api/sounds");
-                setSounds(response.data);
-            } catch(error) {
-                console.log('error', error);
-            }   
+    // Get songs from database
+    useEffect(() => {
+        const fetchAudio = async () => {
+            setLoading(true);
+            const res = await axios.get("http://localhost:8080/api/sounds");
+            setSounds(res.data);
+            setLoading(false);
         }
-        getSounds();
+
+        fetchAudio();
     }, []);
 
+    // Get current posts
+    const indexOfLastSound = currentPage * soundsPerPage;
+    const indexOfFirstSound = indexOfLastSound - soundsPerPage;
+    const currentSounds = sounds.slice(indexOfFirstSound, indexOfLastSound);
+
+    const pageCount = Math.ceil( sounds.length / soundsPerPage );
+
+    const handlePageClick = (event) => {
+
+        // console.log("page clicked")
+        console.log(event.selected)
+        setCurrentPage(event.selected+1);
+    }
+
+    
+    // console.log("sound number " + sounds.length)
     return(
         <div>
         <div className="text-xl text-[#67748a] text-left px-[5rem] py-[1rem]">
             <b>Explore</b>
         </div>
-
-            <div className = "wrapper flex flex-col items-center w-[100%] h-[100%]">
-                {sounds.map((sound) => {
-                    return(
-                        <div className="MiniPlayerStat flex flex-row items-center justify-center text-sm" key={sound._id}>
-                            <MiniPlayer
-                                song={sound}
-                            />
-                            <ReactWordcloud
-                                callbacks = {callbacks}
-                                options = {options}
-                                size = {size}
-                                words = {words}
-                            />
-                        </div>
-                        // <div key={sound._id}>
-                        //     <h4><Link to={`/sounds/${sound._id}`}>{sound.adjs.aggressive}</Link></h4>
-                        //     <small>_id: {sound._id}</small>
-                        //     <h2> wordwordwod</h2>
-                        // </div>
-                    )
-                })}
+            <div>
                 
+                <div className="container">
+
+                    <AudioWordClouds
+                        callbacks={callbacks}
+                        options={options}
+                        size={size}
+                        words={words}
+                        sounds={currentSounds}
+                        loading={loading} 
+                    />
+
+                </div>
             </div>
-            <div className="paginate py-[4rem]">
+
+            <div className="sample py-[4rem]">
                 <ReactPaginate
-                    pageCount={10}
+                    pageCount={pageCount}
                     previousLabel={'<<'}
                     nextLabel={'>>'}
-                    marginPagesDisplayed={3}
+                    // marginPagesDisplayed={3}
                     containerClassName={'pagination justify-content-center'}
                     pageClassName={'page-item'}
                     pageLinkClassName={'page-link'}
                     onPageChange={handlePageClick}
-                    previousClassName={'page-item'}
+                    // previousClassName={'page-item'}
                     previousLinkClassName={'page-link'}
-                    nextClassName={'page-item'}
+                    // nextClassName={'page-item'}
                     nextLinkClassName={'page-link'}
-                    breakClassName={'page-item'}
-                    breakLinkClassName={'page-link'}
+                    // breakClassName={'page-item'}
+                    // breakLinkClassName={'page-link'}
                     activeClassName={'active'}
                 />
             </div>
