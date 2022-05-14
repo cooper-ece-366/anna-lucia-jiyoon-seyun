@@ -1,15 +1,11 @@
 import React, {useState} from 'react'
 import MiniPlayer from '../mini_audio_player/MiniPlayer'
-import ReactWordcloud from 'react-wordcloud'
 import styled from 'styled-components';
 
 import {
     BrowserRouter as Router,
     generatePath,
-    Switch,
-    Route,
     useHistory,
-    useParams
   } from "react-router-dom";
 
 const Button = styled.button`
@@ -22,10 +18,7 @@ const Button = styled.button`
 `
   
 
-const AudioWordClouds = ({ options, size, words, sounds, loading}) => {
-    // if(loading) {
-    //     return <h2>Loading...</h2>
-    // }
+const AudioWordClouds = ({ sounds, loading}) => {
 
     const [id, setId] = useState();
     const history = useHistory();
@@ -40,7 +33,6 @@ const AudioWordClouds = ({ options, size, words, sounds, loading}) => {
 
         <div>
             <div className="list-group flex flex-col justify-center items-center" >
-                    {/* let { _id } = useParams(); */}
                     {sounds.map(sound => {
                         
                         return(
@@ -48,13 +40,7 @@ const AudioWordClouds = ({ options, size, words, sounds, loading}) => {
                             <div key={sound._id} className="nothing flex flex-row justify-center items-center text-sm">
                             <MiniPlayer
                                 song={sound}
-                            />
-                            
-                            <ReactWordcloud
-                                options = {options}
-                                size = {size}
-                                words = {words}
-                            />
+                            />                    
 
                             <Button className="button w-[100px]" 
                             onClick={() => 
