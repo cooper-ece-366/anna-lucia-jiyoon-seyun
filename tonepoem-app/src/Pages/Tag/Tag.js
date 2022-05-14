@@ -7,6 +7,8 @@ import axios from 'axios';
 import { useParams } from 'react-router-dom';
 
 import MiniPlayer from '../../Components/mini_audio_player/MiniPlayer';
+import AudioPlayer from '../../Components/AudioPlayer/AudioPlayer';
+
 import { ADJS } from './adjectives';
 
 //import { InteractionItem } from 'chart.js';
@@ -121,26 +123,26 @@ const Tag = () => {
     }
 
     return(
-        <div>
+        <div className="pt-[1rem] pb-[5rem]">
           <div className="text-xl text-[#67748a] text-left px-[5rem] py-[1rem]">
             <b>Tag</b>
           </div>
 
           <div className = "wrapper flex items-center justify-between px-[5rem] w-[100%] relative z-[3]">
             <div className="music flex flex-col items-center text-center justify-center w-[50%]">
-                <MiniPlayer
+                <AudioPlayer
                     song={sound}
                 />
             </div>
                   
-            <div className="chart relative w-[50%]">
+            <div className="chart flex items-center justify-between relative w-[40%]">
               <Pie 
                 ref={chartRef}
                 data={data} 
                 onClick={onClick}
               />
 
-              <button type="submit">Submit</button>
+              {/* <button type="submit">Submit</button> */}
             </div>
           </div>
         </div>

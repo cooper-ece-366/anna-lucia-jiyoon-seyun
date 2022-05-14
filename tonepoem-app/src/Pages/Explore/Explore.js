@@ -1,6 +1,5 @@
 /*Code written by : Jiyoon Pyo, Seyun Kim*/
-//Music Players coded by: Seyun Kim
-//WordCloud coded by: Jiyoon Pyo
+// Music Players coded by: Seyun Kim
 
 /*File objective: Display Explore page where user can listen to audio data samples and
 * discover statistics of adjectives selected by other users for the corresponding audio sample.
@@ -8,28 +7,12 @@
 * */
 import React, { useState, useEffect } from 'react'
 import axios  from 'axios';
-//import { Link } from 'react-router-dom';
-
-//import ReactWordcloud from 'react-wordcloud'
-//import MiniPlayer from '../mini_audio_player/MiniPlayer'
 import ReactPaginate from 'react-paginate'
+
 import AudioWordClouds from '../../Components/exploreUtils/AudioWordClouds'
-//import Pagination from '../exploreUtils/Pagination'
-
-var words = [];
-
-const options = {
-  rotations: 1,
-  rotationAngles: [0, 180],
-};
-
-const size = [600, 200];
-
-
 
 const Explore = () => {
     const [ sounds, setSounds ] = useState([]); 
-    const [ test, setTest ] = useState([]);
     const [ loading, setLoading ] = useState(false);
     const [ currentPage, setCurrentPage ] = useState(1);
     const [ soundsPerPage, setSoundsPerPage ] = useState(6);
@@ -39,16 +22,12 @@ const Explore = () => {
         const fetchAudio = async () => {
             setLoading(true);
             const res = await axios.get("http://localhost:8080/api/sounds");
-            const test = await axios.get("http://localhost:8080/api/sounds/6277d91677ac0a73d9596173/adj");
-            setTest(test.data);
             setSounds(res.data);
             setLoading(false);
         }
 
         fetchAudio();
     }, []);
-
-    words = test;
 
     // Get current posts
     const indexOfLastSound = currentPage * soundsPerPage;
@@ -64,21 +43,15 @@ const Explore = () => {
     
     return(
         <div>
-        <div className="text-xl text-[#67748a] text-left px-[5rem] py-[1rem]">
-            <b>Explore</b>
-        </div>
+            <div className="text-xl text-[#67748a] text-left px-[5rem] py-[1rem]">
+                <b>Explore</b>
+            </div>
             <div>
-                
                 <div className="container">
-
                     <AudioWordClouds
-                        options={options}
-                        size={size}
-                        words={words}
                         sounds={currentSounds}
                         loading={loading} 
                     />
-
                 </div>
             </div>
 

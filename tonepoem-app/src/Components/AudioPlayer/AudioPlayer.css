@@ -1,0 +1,12 @@
+/*Code written by : */
+/*File objective: */
+.mini-audio-player {
+    display: flex;
+    column-gap: 20px;
+    justify-content: space-between;
+    background: darkgoldenrod;
+}
+
+.mini-player {
+    background: yellow;
+}

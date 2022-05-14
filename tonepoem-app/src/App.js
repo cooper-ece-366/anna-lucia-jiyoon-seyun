@@ -5,6 +5,7 @@ import Navbar from './Pages/Navbar/Navbar';
 import Home from './Pages/Home/Home';
 import Tag from './Pages/Tag/Tag';
 import Explore from './Pages/Explore/Explore';
+import ExploreIndiv from './Pages/Explore/ExploreIndiv'
 import Contact from './Pages/Contact/Contact';
 
 //Routing Completed by: Jiyoon Pyo
@@ -22,6 +23,10 @@ const App = () => {
 
             <Route exact path = "/explore">
               <Explore />
+            </Route>
+
+            <Route exact path = "/explore/:_id">
+              <ExploreIndiv />
             </Route>
 
             <Route exact path = "/tag/:_id">
