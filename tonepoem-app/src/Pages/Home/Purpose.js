@@ -10,7 +10,7 @@ const Purpose = () => {
 
         <div>
             <span>
-                There are few tagged databases of sounds and of those that are documented, the tags are exclusively literal descriptions. Audio tagging is an important task to be able to predict the tags of audio clips. This is only possible with thoroughly tagged audio-database. With TonePoem, you can explore the audio space associated with words and apply to other various tasks like deep learning.
+                There are few tagged databases of sounds, and of those that are documented, the tags are exclusively literal descriptions. Audio tagging is an important task to be able to predict the tags of audio clips. This is only possible with thoroughly tagged audio-database. With TonePoem, you can explore the audio space associated with words and apply to other various tasks like deep learning.
             </span>
       </div>
 
