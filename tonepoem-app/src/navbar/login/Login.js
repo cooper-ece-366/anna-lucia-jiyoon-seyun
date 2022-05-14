@@ -30,7 +30,7 @@ const Login = () => {
     }
 
     return(
-        <button onClick={Logout}>Logout</button>
+        <button className="mr-[35px] hover:bg-[#232A4E] border-[2px] rounded-[10px] border-[#232A4E] px-[25px] py-[7px]" onClick={Logout}>Logout</button>
     )
 }
 export default Login;

@@ -1,9 +1,0 @@
-- Redesign UI
-    - Decide on Color Scheme
-    - Get Color Code
-        - Team Vote
-        - (#020917, #081730, #67748A, #E9C46A, #F4A261)
-
-- Login
-    - When access token given display user info and LogOut
-    - 

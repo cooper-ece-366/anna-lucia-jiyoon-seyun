@@ -27,6 +27,9 @@
     "react-test-renderer": "^18.0.0"
   },
   "scripts": {
-    "server": "nodemon ./server.js"
+    "start": "node tonepoem-service/server.js",
+    "server": "nodemon tonepoem-service/server.js",
+    "client": "npm start --prefix tonepoem-app",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   }
 }

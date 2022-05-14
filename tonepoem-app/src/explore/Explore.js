@@ -38,11 +38,6 @@ const words = [
   },
 ]
 
-const callbacks = {
-  onWordMouseOver: console.log,
-  getWordTooltip: word => `${word.text} (${word.value}) [${word.value > 50 ? "good" : "bad"}]`,
-}
-
 const options = {
   rotations: 1,
   rotationAngles: [0, 180],
@@ -54,7 +49,7 @@ const size = [600, 200];
 
 const Explore = () => {
     const [ sounds, setSounds ] = useState([]); 
-    const [loading, setLoading] = useState(false);
+    const [ loading, setLoading ] = useState(false);
     const [currentPage, setCurrentPage] = useState(1);
     const [soundsPerPage, setSoundsPerPage] = useState(6);
 
@@ -65,6 +60,7 @@ const Explore = () => {
             const res = await axios.get("http://localhost:8080/api/sounds");
             setSounds(res.data);
             setLoading(false);
+            console.log(res);
         }
 
         fetchAudio();
@@ -96,7 +92,6 @@ const Explore = () => {
                 <div className="container">
 
                     <AudioWordClouds
-                        callbacks={callbacks}
                         options={options}
                         size={size}
                         words={words}
@@ -112,17 +107,12 @@ const Explore = () => {
                     pageCount={pageCount}
                     previousLabel={'<<'}
                     nextLabel={'>>'}
-                    // marginPagesDisplayed={3}
                     containerClassName={'pagination justify-content-center'}
                     pageClassName={'page-item'}
                     pageLinkClassName={'page-link'}
                     onPageChange={handlePageClick}
-                    // previousClassName={'page-item'}
                     previousLinkClassName={'page-link'}
-                    // nextClassName={'page-item'}
                     nextLinkClassName={'page-link'}
-                    // breakClassName={'page-item'}
-                    // breakLinkClassName={'page-link'}
                     activeClassName={'active'}
                 />
             </div>

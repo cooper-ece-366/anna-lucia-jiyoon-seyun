@@ -21,31 +21,28 @@ router.get('/sounds/:id', function(req, res) {
     });
 });
 
-router.patch('/sounds/:id', function(req, res) {    
-    Sound.findByIdAndUpdate(req.params.id, req.body)
+router.put('/sounds/:id', function(req, res) {    
+    //adjective = req.body;
+    Sound.findByIdAndUpdate(req.params.id, {
+        $inc: {"adjsa.$.abandoned" : 1}
+    })
         .then(function() {
-            res.json('Sound updated');
+            res.json(req.params);
         })
         .catch(function(err) {
             res.status(422).send("Sound update failed.");
         });
 });
 
-router.post('/sounds/:id', function(req, res) {
-    Sound.findByIdAndUpdate(req.params.id, {$inc: {adjs: {abandoned: 1}}})
-    .then(function() {
-        res.json('Sound updated');
-    })
-    .catch(function(err) {
-        res.status(422).send("Sound update failed.");
-    });
+// router.post('/sounds/:id', function(req, res) {
+//     Sound.findByIdAndUpdate(req.params.id, {$inc: {adjs: {abandoned: 1}}})
+//     .then(function() {
+//         res.json('Sound updated');
+//     })
+//     .catch(function(err) {
+//         res.status(422).send("Sound update failed.");
+//     });
 
-})
-
-// router.route("/sounds/:id").post(async (req, res) => {
-//     const { id } = req.params;
-//     collection.updateOne({ _id: id }, { $inc: {adjs: {abandoned: 1}}});
-//     return res.status(200).json({Updated});
 // })
 
 module.exports = router;

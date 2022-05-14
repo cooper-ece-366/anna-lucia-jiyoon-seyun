@@ -4,23 +4,23 @@ const mongoose = require('mongoose');
 const soundSchema = new mongoose.Schema({
     title: {
         type: String,
-        require: true
+        required: true
     },
     artist: {
         type: String,
-        require: true
+        required: true
     },
     album: {
         type: String,
-        require: true
+        required: true
     },
     src: {
         type: String,
-        require: true
+        required: true
     },
     adj: {
         type: Object,
-        require: true
+        required: true
     }
 });
 

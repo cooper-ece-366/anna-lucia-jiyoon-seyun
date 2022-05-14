@@ -106,8 +106,19 @@ const Tag = () => {
 
         if(adjectiveLevel == 2){
           selection = item.children[index].label;
-          //console.log(selection);
+          console.log(selection);
         }
+    }
+
+    const sendRequest = async() => {
+      await axios.put(`http://localhost:8080/api/sounds/${id}`, {
+        selection
+      })
+    }
+
+    const handleSubmit = (e) => {
+      e.preventDefault();
+      sendRequest().then(() => history("/explore"));
     }
 
     return(
@@ -129,6 +140,8 @@ const Tag = () => {
                 data={data} 
                 onClick={onClick}
               />
+
+              <button type="submit">Submit</button>
             </div>
           </div>
         </div>
