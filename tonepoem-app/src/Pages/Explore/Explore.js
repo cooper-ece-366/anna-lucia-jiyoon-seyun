@@ -42,9 +42,9 @@ const Explore = () => {
     }
     
     return(
-        <div>
-            <div className="text-xl text-[#67748a] text-left px-[5rem] py-[1rem]">
-                <b>Explore</b>
+        <div className="Explore px-[5rem] py-[1.5rem]">
+            <div className="text-2xl text-[#67748a] text-left">
+                Explore
             </div>
             <div>
                 <div className="container">
