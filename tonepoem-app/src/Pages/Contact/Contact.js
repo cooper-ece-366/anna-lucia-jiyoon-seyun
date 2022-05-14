@@ -3,7 +3,7 @@ import React from 'react' // THIS LINE IS REQUIRED
 //Function coded by: Jiyoon Pyo
 const Contact = () => {
     return (
-        <div className="Contact px-[5rem] py-[2rem]">
+        <div className="Contact px-[5rem] py-[1.5rem]">
             <div className="text-2xl">
                 Contact Us
             </div>

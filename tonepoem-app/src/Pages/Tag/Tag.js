@@ -123,9 +123,9 @@ const Tag = () => {
     }
 
     return(
-        <div className="pt-[1rem] pb-[5rem]">
-          <div className="text-xl text-[#67748a] text-left px-[5rem] py-[1rem]">
-            <b>Tag</b>
+        <div className="Tag px-[5rem] py-[1.5rem]">
+          <div className="text-2xl text-[#67748a] text-left">
+            Tag
           </div>
 
           <div className = "wrapper flex items-center justify-between px-[5rem] w-[100%] relative z-[3]">
