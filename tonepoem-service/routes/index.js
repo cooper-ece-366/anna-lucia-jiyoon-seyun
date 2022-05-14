@@ -1,5 +1,6 @@
 //Coded by: Jiyoon Pyo
 const express = require ('express'); 
+const req = require('express/lib/request');
 const { collection } = require('../models/sound');
 const router = express.Router(); 
 
@@ -18,31 +19,37 @@ router.get('/sounds/:id', function(req, res) {
         } else {
             res.json(sound);
         }
+    })
+});
+
+router.get('/sounds/:id/adj', function(req, res) {  
+    Sound.findById(req.params.id, function(err, sound) {
+        if (!sound) {
+            res.status(404).send('No result found');
+        } 
+        else {
+            res.json(sound.adjs);
+        }
     });
 });
 
+// https://stackoverflow.com/questions/33241608/mongoose-elemmatch-and-inc-query-based-on-id
 router.put('/sounds/:id', function(req, res) {    
-    //adjective = req.body;
-    Sound.findByIdAndUpdate(req.params.id, {
-        $inc: {"adjsa.$.abandoned" : 1}
-    })
+    temp = "a";
+    adjective = req.params.selection;
+    Sound.findOneAndUpdate(
+        {_id: req.params.id, adjs:{$elemMatch:{text:temp}}},
+        {$inc:{"adjs.$.value":1}},
+        {$push:{adjs:{
+            $sort: {value: 1}
+        }}}
+    )
         .then(function() {
             res.json(req.params);
         })
         .catch(function(err) {
-            res.status(422).send("Sound update failed.");
+            res.status(422).send(err);
         });
 });
-
-// router.post('/sounds/:id', function(req, res) {
-//     Sound.findByIdAndUpdate(req.params.id, {$inc: {adjs: {abandoned: 1}}})
-//     .then(function() {
-//         res.json('Sound updated');
-//     })
-//     .catch(function(err) {
-//         res.status(422).send("Sound update failed.");
-//     });
-
-// })
 
 module.exports = router;

@@ -106,19 +106,19 @@ const Tag = () => {
 
         if(adjectiveLevel == 2){
           selection = item.children[index].label;
-          console.log(selection);
+          axios.put(`http://localhost:8080/api/sounds/${_id}`, {selection});
+          //console.log(selection);
         }
     }
 
     const sendRequest = async() => {
-      await axios.put(`http://localhost:8080/api/sounds/${id}`, {
-        selection
-      })
+      await axios.put(`http://localhost:8080/api/sounds/${_id}`, {selection})
     }
 
     const handleSubmit = (e) => {
       e.preventDefault();
-      sendRequest().then(() => history("/explore"));
+      sendRequest()
+      //.then(() => history("/explore"));
     }
 
     return(

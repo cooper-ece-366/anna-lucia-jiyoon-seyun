@@ -18,7 +18,7 @@ const soundSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    adj: {
+    adjs: {
         type: Object,
         required: true
     }
