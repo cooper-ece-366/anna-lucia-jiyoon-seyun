@@ -22,7 +22,7 @@ const Button = styled.button`
 `
   
 
-const AudioWordClouds = ({ callbacks, options, size, words, sounds, loading}) => {
+const AudioWordClouds = ({ options, size, words, sounds, loading}) => {
     // if(loading) {
     //     return <h2>Loading...</h2>
     // }
@@ -51,7 +51,6 @@ const AudioWordClouds = ({ callbacks, options, size, words, sounds, loading}) =>
                             />
                             
                             <ReactWordcloud
-                                callbacks = {callbacks}
                                 options = {options}
                                 size = {size}
                                 words = {words}

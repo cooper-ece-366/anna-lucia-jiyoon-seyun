@@ -10,7 +10,7 @@ import Explore from '../explore/Explore';
 import Contact from '../contact/Contact';
 import SoundList from '../sounds/SoundList';
 import SoundInfo from '../sounds/SoundInfo';
-//import SoundEdit from '../sounds/SoundEdit';
+import SoundEdit from '../sounds/SoundEdit';
 //import SoundAdd from '../sounds/SoundAdd';
 
 //Routing Completed by: Jiyoon Pyo
@@ -30,11 +30,11 @@ const App = () => {
               <SoundInfo />
             </Route>
 
-            {/* <Route exact path = "/sounds/:_id/edit">
+            <Route exact path = "/tag/:_id/edit">
               <SoundEdit />
-            </Route>+
+            </Route>
 
-            <Route exact path = "/sounds/new">
+            {/* <Route exact path = "/sounds/new">
               <SoundAdd />
             </Route> */}
 

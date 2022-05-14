@@ -33,10 +33,6 @@ mongoose.connection.on('error', function() {
     console.log('Connection Error');
 });
 
-// app.get('/', function(req, res) {
-//     response.send('Hello World!')
-// });
-
 app.listen(PORT, function() {
     console.log(`Server listening on port ${PORT}`)
 });
