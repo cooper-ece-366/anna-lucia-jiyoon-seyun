@@ -13,30 +13,10 @@ import axios  from 'axios';
 //import ReactWordcloud from 'react-wordcloud'
 //import MiniPlayer from '../mini_audio_player/MiniPlayer'
 import ReactPaginate from 'react-paginate'
-import AudioWordClouds from '../exploreUtils/AudioWordClouds'
+import AudioWordClouds from '../../Components/exploreUtils/AudioWordClouds'
 //import Pagination from '../exploreUtils/Pagination'
 
-var words = [
-  {
-    text: 'told',
-    value: 5000,
-  },
-
-  {
-    text: 'mistake',
-    value: 2000,
-  },
-
-  {
-    text: 'thought',
-    value: 3000,
-  },
-
-  {
-    text: 'bad',
-    value: 1200,
-  },
-]
+var words = [];
 
 const options = {
   rotations: 1,

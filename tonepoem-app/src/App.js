@@ -1,17 +1,11 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'; // Do npm install react-router-dom@5
 
-import Navbar from '../navbar/Navbar';
-import Home from '../home/Home';
-
-import Tag from '../tag/Tag';
-//import RecordList from '../tag/RecordList';
-import Explore from '../explore/Explore';
-import Contact from '../contact/Contact';
-import SoundList from '../sounds/SoundList';
-import SoundInfo from '../sounds/SoundInfo';
-import SoundEdit from '../sounds/SoundEdit';
-//import SoundAdd from '../sounds/SoundAdd';
+import Navbar from './Pages/Navbar/Navbar';
+import Home from './Pages/Home/Home';
+import Tag from './Pages/Tag/Tag';
+import Explore from './Pages/Explore/Explore';
+import Contact from './Pages/Contact/Contact';
 
 //Routing Completed by: Jiyoon Pyo
 const App = () => {
@@ -25,18 +19,6 @@ const App = () => {
             <Route exact path = "/">
               <Home />
             </Route>
-
-            <Route exact path = "/sounds/:_id">
-              <SoundInfo />
-            </Route>
-
-            <Route exact path = "/tag/:_id/edit">
-              <SoundEdit />
-            </Route>
-
-            {/* <Route exact path = "/sounds/new">
-              <SoundAdd />
-            </Route> */}
 
             <Route exact path = "/explore">
               <Explore />

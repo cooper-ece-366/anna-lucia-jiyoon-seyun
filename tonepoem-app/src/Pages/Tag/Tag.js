@@ -4,12 +4,12 @@
 
 import React, { useRef, useState, useEffect } from "react";
 import axios from 'axios';
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
-import MiniPlayer from '../mini_audio_player/MiniPlayer';
+import MiniPlayer from '../../Components/mini_audio_player/MiniPlayer';
 import { ADJS } from './adjectives';
 
-import { InteractionItem } from 'chart.js';
+//import { InteractionItem } from 'chart.js';
 import { 
     Chart as ChartJS, 
     ArcElement, 
@@ -107,7 +107,6 @@ const Tag = () => {
         if(adjectiveLevel == 2){
           selection = item.children[index].label;
           axios.put(`http://localhost:8080/api/sounds/${_id}`, {selection});
-          //console.log(selection);
         }
     }
 

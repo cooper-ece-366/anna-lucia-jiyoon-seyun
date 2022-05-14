@@ -14,7 +14,7 @@ const Hero = () => {
                 <div className="github py-[1.5rem]">
                     <a href="https://github.com/cooper-ece-366/anna-lucia-jiyoon-seyun">
                         <img
-                            src={require("../img/github.png")}
+                            src={require("../../img/github.png")}
                             alt=""
                             className="border-[2px] border-[#67748a] rounded-[13px] h-[2.5rem]"
                         />
