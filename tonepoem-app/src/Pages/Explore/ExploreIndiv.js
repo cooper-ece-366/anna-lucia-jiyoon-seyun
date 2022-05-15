@@ -7,21 +7,9 @@ import { useParams } from 'react-router-dom';
 import ReactWordcloud from 'react-wordcloud'
 
 import AudioPlayer from '../../Components/AudioPlayer/AudioPlayer';
-import styled from 'styled-components';
-
-var adjCloudData = [];
   
 const size = [600, 600];
 const ExploreIndiv = () => {
-const Button = styled.button`
-    background-color: #E9C46A;
-    color: black;
-    padding: 5px 5px;
-    border-radius: 6px;
-    outline: 0;
-    box-shadow: 0px 1.2px 1.2px black;
-`
-
 var options = {
     rotations: 1,
     rotationAngles: [0, 180],
@@ -47,11 +35,7 @@ var options = {
         }
         getSound();
     }, []);
-    // console.log("hellll/" + sound.src);
 
-    //adjCloudData = adjective;
-    // TO DO: FIND A WAY TO MAKE THE WORD SIZE TO BE 10 TIMES VALUE
-    //console.log(adjCloudData[0].value);
     return(
         <div className="ExploreIndiv px-[5rem] py-[1.5rem]">
           <div className="text-2xl text-[#67748a] text-left">
@@ -72,15 +56,19 @@ var options = {
                     minSize = {size}
                     words = {adjectives}
                 />
-
-                <Button className="button w-[100px] flex justify-center items-center ml-[10rem]" 
-                    onClick={(e) => 
-                        {e.preventDefault();
-                            window.location.href=`/tag/${sound._id}`;
-                        }
-                    }>
-                    <strong>Tag</strong>
-                </Button>   
+                {(window.localStorage.getItem("login_token") !== null) && 
+                    <button className="place-self-center mb-[10rem] mt-[7rem] ml-[23rem] mr-[35px] w-[100px] px-[25px] py-[7px] hover:bg-[#E9C46A] hover:text-[#081730] border-[2px] rounded-[10px] border-[#E9C46A]" 
+                        onClick={(e) => 
+                            {e.preventDefault();
+                                window.location.href=`/tag/${sound._id}`;
+                            }
+                        }>
+                        Tag
+                    </button> ||
+                    <div className="ml-[20rem] mt-[7rem] mb-[10rem] text-xl">
+                        <b>Log in</b> to Tag
+                    </div>
+                }
             </div>
           </div>
         </div>
