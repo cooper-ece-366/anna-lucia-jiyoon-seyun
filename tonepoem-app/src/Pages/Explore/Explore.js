@@ -69,6 +69,10 @@ const Explore = () => {
                     activeClassName={'active'}
                 />
             </div>
+
+            {/* <div>
+                <Pagination count={10} disabled />
+            </div> */}
         </div>
     );
 }

@@ -9,7 +9,6 @@ import PauseCircleFilledIcon from '@mui/icons-material/PauseCircleFilled';
 // Designed by: Jiyoon Pyo
 
 function HorizPlayer(props) {
-    console.log(typeof props.song.src)
     return (
         <div className="horiz-player flex justify-between pt-[1rem] pb-[5rem]">
             <div className="play-button h-[5rem] pr-[1rem]">
