@@ -16,7 +16,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class UserHandler {
-    private MongoCollection<Document> collection;
+    public MongoCollection<Document> collection;
     public UserHandler(MongoHandler handler){ // constructor
         collection = handler.getCollection("Users");
     }
@@ -51,8 +51,15 @@ public class UserHandler {
         return getUser(userId);
     }
     public User getUser(String userId){
-        ArrayList<User> users = collection.find(Filters.eq("_id",userId), User.class).into(new ArrayList<>());
-        return users.get(0);
+        Document users = collection.find(Filters.eq("_id",userId)).first();
+        if (users == null || users.isEmpty())
+            return null;
+        return new User(
+                users.getString("_id"),
+                users.getString("firstName"),
+                users.getString("lastName"),
+                users.getString("email")
+        );
     }
 }
 
