@@ -7,6 +7,14 @@ function MiniPlayerDetails(props) {
     return (
 
         <div className="details  text-sm py-[0.5rem]">
+            <span className = "image flex items-center justify-center pb-[1rem]">
+                {/* TODO: Find a better picture fitting the theme */}
+                <img
+                    src={require("../../img/song-art.png")}
+                    alt=""
+                    className="border-[2px] rounded-[13px] h-[15rem]"
+                />
+            </span>
             <p className="details-title flex items-center justify-center">
                 Title: <strong>{props.song.title}</strong>
             </p>

@@ -8,7 +8,7 @@
 import React, { useState, useEffect } from 'react';
 import axios  from 'axios';
 import ReactPaginate from 'react-paginate';
-import Pagination from '@mui/material/Pagination';
+// import Pagination from '@mui/material/Pagination';
 
 import AudioWordClouds from '../../Components/exploreUtils/AudioWordClouds';
 

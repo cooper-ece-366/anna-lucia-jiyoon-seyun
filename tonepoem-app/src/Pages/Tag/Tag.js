@@ -81,12 +81,12 @@ const Tag = () => {
         }
         getSound();
     }, []);
-
+    
     const chartRef = useRef();
     var adjectiveLevel = 0;
     var item = ADJS;
     var selection;
-
+    
     const onClick = (event) => {
         const chart = chartRef.current;
         var index = getElementAtEvent(chartRef.current, event)[0].index;
@@ -121,7 +121,6 @@ const Tag = () => {
       sendRequest()
       //.then(() => history("/explore"));
     }
-
     return(
         <div className="Tag px-[5rem] py-[1.5rem]">
           <div className="text-2xl text-[#67748a] text-left">
@@ -131,7 +130,7 @@ const Tag = () => {
           <div className = "wrapper flex items-center justify-between px-[5rem] w-[100%] relative z-[3]">
             <div className="music flex flex-col items-center text-center justify-center w-[50%]">
                 <AudioPlayer
-                    song={sound}
+                    song={"../../../public/000002.mp3"}
                 />
             </div>
                   

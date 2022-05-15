@@ -11,6 +11,7 @@ import ReactAudioPlayer from "react-audio-player";
 function MiniPlayer(props) {
     return (
         <div className="mini-audio-player py-[0.8rem]">
+           
             <div className="mini-description">
                 <MiniPlayerDetails
                    song={props.song}
@@ -18,7 +19,7 @@ function MiniPlayer(props) {
             </div>
             <div className="mini-player">
                 <ReactAudioPlayer
-                    src={props.song.src}
+                    src={props.src}
                     autoPlay={false}
                     controls
                 />

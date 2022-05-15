@@ -1,13 +1,14 @@
 /* Code by Seyun Kim and Jiyoon Pyo */
-// Music Player coded by Seyun Kim
-// Pie Chart coded by Jiyoon Pyo
+
 
 import React, { useRef, useState, useEffect } from "react";
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import ReactWordcloud from 'react-wordcloud'
+import ReactAudioPlayer from "react-audio-player";
 
-import AudioPlayer from '../../Components/AudioPlayer/AudioPlayer';
+import AudioPlayer from '../../Components/mini_audio_player/MiniPlayer';
+import MiniPlayer from "../../Components/mini_audio_player/MiniPlayer";
 
 var adjCloudData = [];
 
@@ -18,7 +19,6 @@ var options = {
 };
   
 const size = [600, 600];
-
 const Tag = () => {
     const [ sound, setSound ] = useState([]);
     const [ adjective, setAdjective ] = useState([]);
@@ -39,12 +39,11 @@ const Tag = () => {
         }
         getSound();
     }, []);
+    // console.log("hellll/" + sound.src);
 
     adjCloudData = adjective;
-
     // TO DO: FIND A WAY TO MAKE THE WORD SIZE TO BE 10 TIMES VALUE
     //console.log(adjCloudData[0].value);
-
     return(
         <div className="ExploreIndiv px-[5rem] py-[1.5rem]">
           <div className="text-2xl text-[#67748a] text-left">
@@ -53,9 +52,14 @@ const Tag = () => {
 
           <div className = "wrapper flex items-center justify-between px-[5rem] w-[100%] relative z-[3]">
             <div className="music flex flex-col items-center text-center justify-center w-[50%]">
-                <AudioPlayer
+                <MiniPlayer
                     song={sound}
+                    src={"http://localhost:3000/" + sound.src}
                 />
+                {/* <ReactAudioPlayer
+                    src={"http://localhost:3000/" + sound.src}
+                    autoPlay={false}
+                    controls /> */}
             </div>
                   
             <div className="chart relative w-[50%]">
