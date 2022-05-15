@@ -10,12 +10,6 @@ import AudioPlayer from '../../Components/AudioPlayer/AudioPlayer';
 import styled from 'styled-components';
 
 var adjCloudData = [];
-
-var options = {
-    rotations: 1,
-    rotationAngles: [0, 180],
-    //fontSizes: [100, 50, 30],
-};
   
 const size = [600, 600];
 const ExploreIndiv = () => {
@@ -28,9 +22,15 @@ const Button = styled.button`
     box-shadow: 0px 1.2px 1.2px black;
 `
 
+var options = {
+    rotations: 1,
+    rotationAngles: [0, 180],
+    //fontSizes: [100, 50, 30],
+};
+
 // const ExploreIndiv = () => {
     const [ sound, setSound ] = useState([]);
-    const [ adjective, setAdjective ] = useState([]);
+    const [ adjectives, setAdjectives ] = useState([]);
 
     let { _id } = useParams();
 
@@ -38,9 +38,9 @@ const Button = styled.button`
         async function getSound() {
             try {
                 const response = await axios.get(`http://localhost:8080/api/sounds/${_id}`);
-                const adj = await axios.get("http://localhost:8080/api/sounds/6277d91677ac0a73d9596173/adj");
+                const adj = await axios.get(`http://localhost:8080/api/sounds/${_id}/adj`);
                 setSound(response.data);
-                setAdjective(adj.data);
+                setAdjectives(adj.data);
             } catch(error) {
                 console.log('error', error);
             }
@@ -49,7 +49,7 @@ const Button = styled.button`
     }, []);
     // console.log("hellll/" + sound.src);
 
-    adjCloudData = adjective;
+    //adjCloudData = adjective;
     // TO DO: FIND A WAY TO MAKE THE WORD SIZE TO BE 10 TIMES VALUE
     //console.log(adjCloudData[0].value);
     return(
@@ -70,7 +70,7 @@ const Button = styled.button`
                 <ReactWordcloud
                     options = {options}
                     minSize = {size}
-                    words = {adjCloudData}
+                    words = {adjectives}
                 />
 
                 <Button className="button w-[100px] flex justify-center items-center ml-[10rem]" 
