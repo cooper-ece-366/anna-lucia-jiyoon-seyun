@@ -119,7 +119,6 @@ const Tag = () => {
     const handleSubmit = (e) => {
       e.preventDefault();
       sendRequest()
-      //.then(() => history("/explore"));
     }
     return(
         <div className="Tag px-[5rem] py-[1.5rem]">
@@ -130,7 +129,8 @@ const Tag = () => {
           <div className = "wrapper flex items-center justify-between px-[5rem] w-[100%] relative z-[3]">
             <div className="music flex flex-col items-center text-center justify-center w-[50%]">
                 <AudioPlayer
-                    song={"../../../public/000002.mp3"}
+                    song={sound}
+                    src={"http://localhost:3000/" + sound.src}
                 />
             </div>
                   
