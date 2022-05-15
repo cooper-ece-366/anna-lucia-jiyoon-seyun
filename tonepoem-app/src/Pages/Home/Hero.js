@@ -23,11 +23,10 @@ const Hero = () => {
                 
             </div>
 
-            <div className="image relative w-[50%]">
+            <div className="image relative w-[50%] pr-[3rem]">
                 <img
                     src={require("../../img/hero-img.png")}
                     alt=""
-                    className="relative  left-[1rem]"
                 />
                 {/* <span className="text-[15px] text-[#525D6E]">
                     IMAGE

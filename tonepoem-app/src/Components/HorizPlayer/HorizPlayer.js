@@ -11,10 +11,10 @@ import PauseCircleFilledIcon from '@mui/icons-material/PauseCircleFilled';
 function HorizPlayer(props) {
     return (
         <div className="horiz-player flex justify-between pt-[1rem] pb-[5rem]">
-            <div className="play-button h-[5rem] pr-[1rem]">
+            {/* <div className="play-button h-[5rem] pr-[1rem]">
                 <PlayCircleFilledIcon sx={{fontSize:60}} />
                 <PauseCircleFilledIcon sx={{fontSize:60}} />
-            </div>
+            </div> */}
 
             <div className="information-player">
                 <div className="horiz-description">

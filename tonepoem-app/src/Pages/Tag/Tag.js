@@ -5,7 +5,6 @@
 import React, { useRef, useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
-import styled from "styled-components";
 
 import AudioPlayer from "../../Components/AudioPlayer/AudioPlayer";
 import { ADJS } from "./adjectives";
@@ -16,14 +15,6 @@ import { Pie, getElementAtEvent } from "react-chartjs-2";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
-const Button = styled.button`
-  background-color: #e9c46a;
-  color: black;
-  padding: 5px 5px;
-  border-radius: 6px;
-  outline: 0;
-`;
-
 export const data = {
   labels: ["bad", "fearful", "peaceful", "happy", "sad", "disgusted", "angry"],
   datasets: [
@@ -31,14 +22,15 @@ export const data = {
       label: "adjectives",
       data: [1, 1, 1, 1, 1, 1, 1],
       backgroundColor: [
-        "rgba(255, 99, 132, 1)",
-        "rgba(54, 162, 235, 1)",
-        "rgba(255, 206, 86, 1)",
-        "rgba(75, 192, 192, 1)",
-        "rgba(153, 102, 255, 1)",
-        "rgba(255, 159, 64, 1)",
-        "rgba(54, 162, 235, 1)",
+        "rgba(236, 85, 101, 1)",
+        "rgba(242, 110, 83, 1)",
+        "rgba(103, 152, 208, 1)",
+        "rgba(255, 206, 85, 1)",
+        "rgba(91, 193, 166, 1)",
+        "rgba(231, 136, 184, 1)",
+        "rgba(244, 247, 250, 1)",
       ],
+      borderColor: ["#081730"],
       borderWidth: 1,
     },
   ],
@@ -115,24 +107,21 @@ const Tag = () => {
           />
         </div>
 
-        <div className="chart relative w-[35%]">
+        <div className="mr-[10rem] chart relative w-[35%]">
           <Pie 
             ref={chartRef} 
             data={data} 
             onClick={onClick} 
             options={options}/>
 
-          <Button
-            className="button w-[100px] flex justify-center items-center ml-[10rem]"
+          <button
+            className="place-self-center mb-[10rem] mt-[5rem] ml-[16rem] mr-[35px] w-[100px] px-[25px] py-[7px] hover:bg-[#E9C46A] hover:text-[#081730] border-[2px] rounded-[10px] border-[#E9C46A]"
             onClick={(e) => {
               e.preventDefault();
               axios.put(`http://localhost:8080/api/sounds/${_id}/${selection}`, {}, { headers: { authorization: localStorage.getItem("login_token")}});
-
               window.location.href=`/explore/${_id}`;
             }}
-          >
-            <strong>Submit</strong>
-          </Button>
+          >Submit</button>
         </div>
       </div>
     </div>
