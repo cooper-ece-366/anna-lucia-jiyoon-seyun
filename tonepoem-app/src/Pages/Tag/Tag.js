@@ -118,8 +118,7 @@ const Tag = () => {
             className="place-self-center mb-[10rem] mt-[5rem] ml-[16rem] mr-[35px] w-[100px] px-[25px] py-[7px] hover:bg-[#E9C46A] hover:text-[#081730] border-[2px] rounded-[10px] border-[#E9C46A]"
             onClick={(e) => {
               e.preventDefault();
-              axios.put(`http://localhost:8080/api/sounds/${_id}/${selection}`
-              );
+              axios.put(`http://localhost:8080/api/sounds/${_id}/${selection}`, {}, { headers: { authorization: localStorage.getItem("login_token")}});
               window.location.href=`/explore/${_id}`;
             }}
           >Submit</button>

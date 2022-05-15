@@ -1,4 +1,6 @@
-//Coded by: Jiyoon Pyo
+//Coded by: Jiyoon Pyo, Lucia Rhode
+const axios = require('axios');
+
 const express = require ('express'); 
 const req = require('express/lib/request');
 const { collection } = require('../models/sound');
@@ -35,7 +37,14 @@ router.get('/sounds/:id/adj', function(req, res) {
 });
 
 // https://stackoverflow.com/questions/33241608/mongoose-elemmatch-and-inc-query-based-on-id
-router.put('/sounds/:id/:selection', function(req, res) {    
+router.put('/sounds/:id/:selection', async function(req, res) {
+    const seyuniscute = await axios.get("http://localhost:4567/whoami", { headers: { authorization: req.headers.authorization }}).catch(() => null)
+    if (!seyuniscute || !seyuniscute.data || !seyuniscute.data.userId){
+        res.status(401).send();
+        return
+    }
+
+
     adjective = req.params.selection;
     Sound.findOneAndUpdate(
         {_id: req.params.id, adjs:{$elemMatch:{text:adjective}}},

@@ -41,7 +41,7 @@ public class User {
     public String getEmail() {
         return email;
     }
-    //public String toString() {
-    //    return toJSONString();
-    //}
+    public String toString() {
+        return toJSONString();
+    }
 }
