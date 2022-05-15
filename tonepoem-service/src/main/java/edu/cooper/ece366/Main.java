@@ -20,8 +20,8 @@ import java.util.Arrays;
 
 public class Main {
 
-    public static void main(String[] args){
-        get("/test", (req,res)->{
+    public static void main(String[] args){ // MongoHandler, UserHandler and Social Login Sanity Checks
+        get("/test", (req,res)->{ // Backend Hello World
             return "Woo, we love TonePoem";
         });
         MongoHandler handler = new MongoHandler("HelloWorld");

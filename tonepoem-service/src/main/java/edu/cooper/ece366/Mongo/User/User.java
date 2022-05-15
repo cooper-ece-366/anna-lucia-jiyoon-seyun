@@ -28,7 +28,20 @@ public class User {
         return new Gson().toJson(this);
     }
 
-    public String toString() {
-        return toJSONString();
+    @BsonProperty("_id")
+    public String getId() {
+        return userId;
     }
+    public String getFirstName() {
+        return firstName;
+    }
+    public String getLastName() {
+        return lastName;
+    }
+    public String getEmail() {
+        return email;
+    }
+    //public String toString() {
+    //    return toJSONString();
+    //}
 }
