@@ -108,12 +108,12 @@ const Tag = () => {
 
         if(adjectiveLevel == 2){
           selection = item.children[index].label;
-          axios.put(`http://localhost:8080/api/sounds/${_id}`, {selection});
+          axios.put(`http://localhost:8080/api/sounds/${_id}/${selection}`);
         }
     }
 
     const sendRequest = async() => {
-      await axios.put(`http://localhost:8080/api/sounds/${_id}`, {selection})
+      await axios.put(`http://localhost:8080/api/sounds/${_id}/${selection}`, {selection: selection})
     }
 
     const handleSubmit = (e) => {

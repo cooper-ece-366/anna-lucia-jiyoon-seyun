@@ -9,7 +9,7 @@ import ReactAudioPlayer from "react-audio-player";
 
 //Coded by: Seyun Kim
 function AudioPlayer(props) {
-    //console.log(props.song.src)
+    console.log(props.song.src)
     return (
         <div className="audio-player pt-[1rem] pb-[5rem]">
             <div className="mini-description pb-[5rem]">
@@ -21,8 +21,8 @@ function AudioPlayer(props) {
                 {/* TODO: Redesign Player Bar */}
                 {/* TODO: Solve Audio not playing Issue */}
                 <ReactAudioPlayer
-                    src={props.song.src}
-                    autoPlay={false}
+                    src={"000190.mp3"}
+                    autoPlay={true}
                     controls
                 />
             </div>
