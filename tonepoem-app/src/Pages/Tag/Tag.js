@@ -126,7 +126,8 @@ const Tag = () => {
             className="button w-[100px] flex justify-center items-center ml-[10rem]"
             onClick={(e) => {
               e.preventDefault();
-              axios.put(`http://localhost:8080/api/sounds/${_id}/${selection}`);
+              axios.put(`http://localhost:8080/api/sounds/${_id}/${selection}`, {}, { headers: { authorization: localStorage.getItem("login_token")}});
+
               window.location.href=`/explore/${_id}`;
             }}
           >

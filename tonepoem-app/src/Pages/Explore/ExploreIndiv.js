@@ -73,14 +73,20 @@ var options = {
                     words = {adjectives}
                 />
 
-                <Button className="button w-[100px] flex justify-center items-center ml-[10rem]" 
-                    onClick={(e) => 
-                        {e.preventDefault();
-                            window.location.href=`/tag/${sound._id}`;
-                        }
-                    }>
-                    <strong>Tag</strong>
-                </Button>   
+                { ((localStorage.getItem("login_token")) &&
+                    <Button className="button w-[100px] flex justify-center items-center ml-[10rem]"
+                                        onClick={(e) =>
+                                            {e.preventDefault();
+                                                window.location.href=`/tag/${sound._id}`;
+                                            }
+                                        }>
+                                        <strong>Tag</strong>
+                                    </Button>
+                    )
+                    ||
+                    <strong>Login to Tag</strong>
+                }
+
             </div>
           </div>
         </div>

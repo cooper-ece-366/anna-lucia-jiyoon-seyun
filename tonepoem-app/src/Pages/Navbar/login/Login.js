@@ -12,7 +12,7 @@ const Login = () => {
 
     const Logout = () => {
         localStorage.removeItem('login_token');
-        window.location.reload();
+        window.location.href = "/";
     }
 
     if (window.localStorage.getItem("login_token") === null) {

@@ -51,9 +51,10 @@ public class Main {
             System.err.println("Uh oh, no login");
         }
 
-        get("/hello", (req,res) -> {
+        get("/whoami", (req,res) -> {
             try{
                 UserHandler handled = new UserHandler(handler);
+                System.out.println(req.headers("Authorization"));
                 User user = handled.verifyUser(req.headers("Authorization"));
                 return user;
             } catch (Exception e){
