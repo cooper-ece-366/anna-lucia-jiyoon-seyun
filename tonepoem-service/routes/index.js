@@ -22,7 +22,10 @@ router.get('/sounds/:id', function(req, res) {
     })
 });
 
+
+// TODO: Limit adjs to first 10
 router.get('/sounds/:id/adj', function(req, res) {  
+    
     Sound.findById(req.params.id, function(err, sound) {
         if (!sound) {
             res.status(404).send('No result found');
@@ -34,14 +37,13 @@ router.get('/sounds/:id/adj', function(req, res) {
 });
 
 // https://stackoverflow.com/questions/33241608/mongoose-elemmatch-and-inc-query-based-on-id
-router.put('/sounds/:id', function(req, res) {    
-    temp = "a";
+router.put('/sounds/:id/:selection', function(req, res) {    
     adjective = req.params.selection;
     Sound.findOneAndUpdate(
-        {_id: req.params.id, adjs:{$elemMatch:{text:temp}}},
+        {_id: req.params.id, adjs:{$elemMatch:{text:adjective}}},
         {$inc:{"adjs.$.value":1}},
         {$push:{adjs:{
-            $sort: {value: 1}
+            $sort: {value: -1}
         }}}
     )
         .then(function() {
