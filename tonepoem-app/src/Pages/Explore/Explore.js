@@ -5,11 +5,12 @@
 * discover statistics of adjectives selected by other users for the corresponding audio sample.
 * Users can also navigate to a specific tag page where they can tag adjectives for each audio sample.
 * */
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react';
 import axios  from 'axios';
-import ReactPaginate from 'react-paginate'
+import ReactPaginate from 'react-paginate';
+import Pagination from '@mui/material/Pagination';
 
-import AudioWordClouds from '../../Components/exploreUtils/AudioWordClouds'
+import AudioWordClouds from '../../Components/exploreUtils/AudioWordClouds';
 
 const Explore = () => {
     const [ sounds, setSounds ] = useState([]); 
@@ -69,6 +70,10 @@ const Explore = () => {
                     activeClassName={'active'}
                 />
             </div>
+
+            {/* <div>
+                <Pagination count={10} disabled />
+            </div> */}
         </div>
     );
 }
