@@ -21,7 +21,7 @@ const Login = () => {
                 clientId="952972505853-d0ct4jna4kp5tolsm88vh55uo64p76ub.apps.googleusercontent.com"
                 buttonText="Login"
                 render={renderProps => (
-                    <button className="mr-[35px] hover:bg-[#232A4E] border-[2px] rounded-[10px] border-[#232A4E] px-[25px] py-[7px]" onClick={renderProps.onClick} disabled={renderProps.disabled}>Login</button>)}
+                    <button className="mr-[35px] hover:bg-[#E9C46A] hover:text-[#081730] border-[2px] rounded-[10px] border-[#E9C46A] px-[25px] py-[7px]" onClick={renderProps.onClick} disabled={renderProps.disabled}>Login</button>)}
                 onSuccess={responseGoogle}
                 onFailure={responseGoogle}
                 cookiePolicy={'single_host_origin'}
@@ -30,7 +30,7 @@ const Login = () => {
     }
 
     return(
-        <button className="mr-[35px] hover:bg-[#232A4E] border-[2px] rounded-[10px] border-[#232A4E] px-[25px] py-[7px]" onClick={Logout}>Logout</button>
+        <button className="mr-[35px] hover:bg-[#E9C46A] hover:text-[#081730] border-[2px] rounded-[10px] border-[#E9C46A] px-[25px] py-[7px]" onClick={Logout}>Logout</button>
     )
 }
 export default Login;
