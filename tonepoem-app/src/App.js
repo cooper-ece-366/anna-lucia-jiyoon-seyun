@@ -7,6 +7,7 @@ import Tag from './Pages/Tag/Tag';
 import Explore from './Pages/Explore/Explore';
 import ExploreIndiv from './Pages/Explore/ExploreIndiv'
 import Contact from './Pages/Contact/Contact';
+import Learn_more from './learn_more/Learn_more';
 
 //Routing Completed by: Jiyoon Pyo
 const App = () => {
@@ -35,6 +36,9 @@ const App = () => {
 
             <Route exact path = "/contact">
               <Contact />
+            </Route>
+            <Route exact path = "/learn_more">
+              <Learn_more />
             </Route>
           </Switch>
         </div>
