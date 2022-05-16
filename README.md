@@ -25,6 +25,6 @@ to start the web page.<br>
 3. The application would automatrically pop on the web, and it will be running on localhost:3000<br>
 4. Have fun exploring and tagging our audio data!
 
-## Usefule Links
+## Useful Links
 [YouTube Video](https://www.youtube.com/watch?v=e0512VAn6M0&ab_channel=SeyunKim)<br>
 [TonePoem Wiki](https://github.com/cooper-ece-366/anna-lucia-jiyoon-seyun/wiki)
