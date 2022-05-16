@@ -1,3 +1,4 @@
+//Coded by: Lucia Rhode
 package edu.cooper.ece366.Mongo.User;
 
 import edu.cooper.ece366.Mongo.MongoHandler;

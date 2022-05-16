@@ -1,3 +1,4 @@
+//Coded by: Lucia Rhode
 package edu.cooper.ece366.Mongo.User;
 
 import com.google.api.client.googleapis.auth.oauth2.GoogleIdToken;

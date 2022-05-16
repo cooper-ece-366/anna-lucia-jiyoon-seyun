@@ -1,3 +1,4 @@
+//Coded by: Lucia
 package edu.cooper.ece366.Middleware;
 
 import edu.cooper.ece366.Mongo.User.UserHandler;

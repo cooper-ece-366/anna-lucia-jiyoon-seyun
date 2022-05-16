@@ -1,4 +1,4 @@
-//Coded by: Jiyoon Pyo, Lucia Rhode
+//Coded by: Jiyoon Pyo, Lucia Rhode (authorization header)
 const axios = require('axios');
 
 const express = require ('express'); 
