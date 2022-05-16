@@ -12,7 +12,6 @@ function AudioPlayer(props) {
                 />
             </div>
             <div className="mini-player">
-                {/* TODO: Redesign Player Bar */}
                 <ReactAudioPlayer
                     src={props.src}
                     autoPlay={false}

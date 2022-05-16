@@ -12,9 +12,6 @@ const Navbar = () => {
 
             <div className="buttons flex">
                 <Login />
-                {/* <button className="bg-[#232A4E] border-[2px] rounded-[10px] border-[#232A4E] px-[25px] py-[7px]">
-                    Sign Up
-                </button> */}
             </div>
         </nav>
     );

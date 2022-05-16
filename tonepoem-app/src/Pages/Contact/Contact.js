@@ -1,4 +1,4 @@
-import React from 'react' // THIS LINE IS REQUIRED
+import React from 'react'
 
 //Function coded by: Jiyoon Pyo
 const Contact = () => {

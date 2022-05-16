@@ -1,7 +1,13 @@
 /* Code by Seyun Kim and Jiyoon Pyo */
+// Audio Player Made by Seyun Kim:
+// Else: Jiyoon Pyo
 
-
-import React, { useRef, useState, useEffect } from "react";
+/*Functionality:
+The Explore Individual Page allows the user to see the top 10 adjectives describing the sound. The user may also use the
+audio player on the left to re-listen to the sound. If they are willing to tag the sound, they must be logged in to hit
+the 'Tag' button
+*/
+import React, { useState, useEffect } from "react";
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import ReactWordcloud from 'react-wordcloud'
@@ -9,19 +15,18 @@ import ReactWordcloud from 'react-wordcloud'
 import AudioPlayer from '../../Components/AudioPlayer/AudioPlayer';
   
 const size = [600, 600];
-const ExploreIndiv = () => {
-var options = {
+const options = {
     rotations: 1,
     rotationAngles: [0, 180],
-    //fontSizes: [100, 50, 30],
 };
 
-// const ExploreIndiv = () => {
+const ExploreIndiv = () => {
     const [ sound, setSound ] = useState([]);
     const [ adjectives, setAdjectives ] = useState([]);
 
     let { _id } = useParams();
 
+    // The function sets adj to be the top 10 adjectives list and sets response to the information on the sound
     useEffect(function() {
         async function getSound() {
             try {

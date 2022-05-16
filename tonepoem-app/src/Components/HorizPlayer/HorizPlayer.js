@@ -1,21 +1,12 @@
-import React from 'react'
-import ReactAudioPlayer from "react-audio-player";
-
-import { IconButton } from "@mui/material";
-import PlayCircleFilledIcon from '@mui/icons-material/PlayCircleFilled';
-import PauseCircleFilledIcon from '@mui/icons-material/PauseCircleFilled';
-
 // Coded by: Seyun Kim
 // Designed by: Jiyoon Pyo
+
+import React from 'react'
+import ReactAudioPlayer from "react-audio-player";
 
 function HorizPlayer(props) {
     return (
         <div className="horiz-player flex justify-between pt-[1rem] pb-[5rem]">
-            {/* <div className="play-button h-[5rem] pr-[1rem]">
-                <PlayCircleFilledIcon sx={{fontSize:60}} />
-                <PauseCircleFilledIcon sx={{fontSize:60}} />
-            </div> */}
-
             <div className="information-player">
                 <div className="horiz-description">
                     <span className = "title flex items-left justify-left text-[1.2rem]">

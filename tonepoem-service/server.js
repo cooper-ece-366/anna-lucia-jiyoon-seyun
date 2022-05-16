@@ -2,8 +2,9 @@
 
 const { response } = require('express');
 const express = require('express');
-
 const mongoose = require('mongoose');
+
+// Using cors since their is a corruption between localhost:3000 and localhost:8080 in integration
 const cors = require('cors');
 const corsOptions = {
     origin: 'http://localhost:3000',
@@ -21,9 +22,9 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use('/api', router);
 
+// Using mongoose to use MongoDB in our app
 mongoose.connect(MONGODB_URI, {
     useNewUrlParser: true,
-    //useFindAndModify: false
 });
 
 mongoose.connection.once('open', function() {

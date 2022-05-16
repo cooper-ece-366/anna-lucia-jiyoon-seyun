@@ -1,14 +1,16 @@
-//This function displays the detail of the song being played,
-//including song title and artist
-import React from 'react';
-
 // Coded by: Seyun Kim
 // Designed by: Jiyoon Pyo
+
+/* Functionality:
+This function displays the detail of the song being played,
+including song title and artist */
+
+import React from 'react';
+
 function AudioPlayerDetails(props) {
     return (
         <div className = "songs-details">
             <span className = "image flex items-center justify-center pb-[1rem]">
-                {/* TODO: Find a better picture fitting the theme */}
                 <img
                     src={require("../../img/song-art.png")}
                     alt=""

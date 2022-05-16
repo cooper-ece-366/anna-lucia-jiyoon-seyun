@@ -2,6 +2,11 @@
 // Music Player coded by Seyun Kim
 // Pie Chart coded by Jiyoon Pyo
 // Axios Authorization coded by Lucia Rhode
+
+/*Functionality:
+User is given a pie chart that is in three hierarchy. At their final hierarchy (the third one) after picking the one they would
+like to the description of the sound. They will hit submit. This will update the database and redirect them to the explore tab
+*/
 import React, { useRef, useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
@@ -15,6 +20,7 @@ import { Pie, getElementAtEvent } from "react-chartjs-2";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
+// Data initialization for the pie chart
 export const data = {
   labels: ["bad", "fearful", "peaceful", "happy", "sad", "disgusted", "angry"],
   datasets: [
@@ -42,6 +48,7 @@ export const options = {
   }
 };
 
+// This function changes the data being displayed on the pie chart when a sector is clicked
 function changeData(chart, label) {
   chart.data.labels = label;
   chart.update();
@@ -52,6 +59,7 @@ const Tag = () => {
 
   let { _id } = useParams();
 
+  // The axios receives the information on the sound
   useEffect(function () {
     async function getSound() {
       try {
@@ -71,6 +79,7 @@ const Tag = () => {
   var item = ADJS;
   var selection;
 
+  // onClick, the adjective follows the adjectives.js and goes to its children, and resets the label
   const onClick = (event) => {
     const chart = chartRef.current;
     var index = getElementAtEvent(chartRef.current, event)[0].index;

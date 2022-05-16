@@ -1,6 +1,9 @@
-//Coded by: Jiyoon Pyo
+// Coded by: Jiyoon Pyo
+// Database Populated by: Seyun Kim
+
 const mongoose = require('mongoose');
 
+// The soundScheman contains 5 items as shown below
 const soundSchema = new mongoose.Schema({
     title: {
         type: String,
@@ -19,7 +22,7 @@ const soundSchema = new mongoose.Schema({
         required: true
     },
     adjs: {
-        type: Object,
+        type: Array,
         required: true
     }
 });

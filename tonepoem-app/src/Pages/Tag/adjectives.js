@@ -1,3 +1,5 @@
+// Adjective list compiled by: Seyun Kim
+// Adjective structured in tree format by: Jiyoon Pyo
 export const ADJS = {children: [
     {
         label: 'bad',

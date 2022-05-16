@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'; // Do npm install react-router-dom@5
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import Navbar from './Pages/Navbar/Navbar';
 import Home from './Pages/Home/Home';
@@ -7,7 +7,7 @@ import Tag from './Pages/Tag/Tag';
 import Explore from './Pages/Explore/Explore';
 import ExploreIndiv from './Pages/Explore/ExploreIndiv'
 import Contact from './Pages/Contact/Contact';
-import Learn_more from './learn_more/Learn_more';
+import Learn_more from './Pages/learn_more/Learn_more';
 
 //Routing Completed by: Jiyoon Pyo
 const App = () => {

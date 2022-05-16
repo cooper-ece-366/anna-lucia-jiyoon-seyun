@@ -30,7 +30,7 @@ const Purpose = () => {
 
         <div>
             <span>
-            Have fun <i>tagging</i> audio! You can also <i>explore</i> what sounds have been associated with which adjectives. If you're intersted in <i>playing</i> with the data we collect and <i>expanding</i> on the TONEPOEM mission, all tags are made open-source as are the audio databases we pull from. Check out the Data/API tab and feel free to contact us.
+            Have fun <i>tagging</i> audio! You can also <i>explore</i> what sounds have been associated with which adjectives. If you're intersted in <i>playing</i> with the data we collect and <i>expanding</i> on the TONEPOEM mission, all tags are made open-source as are the audio databases we pull from.
             </span>
       </div>
 
