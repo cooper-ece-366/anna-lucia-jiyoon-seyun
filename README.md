@@ -12,7 +12,7 @@ The goal of the project is to create a classified database of sounds with abstra
 ```
 git clone git@github.com:cooper-ece-366/anna-lucia-jiyoon-seyun.git
 ```
-on your command line
+on your command line.<br>
 2. Navigate to the anna-lucia-jiyoon-seyun folder by typing
 ```
 cd anna-lucia-jiyoon-seyun
@@ -21,10 +21,10 @@ and type
 ```
 npm run dev
 ```
-to start the web page.
-3. The application would automatrically pop on the web, and it will be running on localhost:3000
+to start the web page.<br>
+3. The application would automatrically pop on the web, and it will be running on localhost:3000<br>
 4. Have fun exploring and tagging our audio data!
 
 ## Usefule Links
-[YoutTube Video]()
-[TonePoem Wiki]()
+[YouTube Video](https://www.youtube.com/watch?v=e0512VAn6M0&ab_channel=SeyunKim)
+[TonePoem Wiki](https://github.com/cooper-ece-366/anna-lucia-jiyoon-seyun/wiki)
