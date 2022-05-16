@@ -1,3 +1,5 @@
+// Coded by: Seyun Kim
+
 import React from 'react'
 
 const Pagination = ({ soundsPerPage, totalSounds }) => {

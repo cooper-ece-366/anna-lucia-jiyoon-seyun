@@ -1,3 +1,6 @@
+// Coded by: Seyun Kim
+// Designed by: Jiyoon Pyo
+
 import React from 'react';
 import HorizPlayer from '../HorizPlayer/HorizPlayer';
 

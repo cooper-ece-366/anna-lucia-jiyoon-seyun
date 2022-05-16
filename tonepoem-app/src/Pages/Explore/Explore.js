@@ -1,5 +1,5 @@
 /*Code written by : Jiyoon Pyo, Seyun Kim*/
-// Music Players coded by: Seyun Kim
+// Music Players, pagination coded by: Seyun Kim
 
 /*File objective: Display Explore page where user can listen to audio data samples and
 * discover statistics of adjectives selected by other users for the corresponding audio sample.
