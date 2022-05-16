@@ -1,7 +1,7 @@
-/* Code by Seyun Kim and Jiyoon Pyo */
+/* Code by Seyun Kim, Jiyoon Pyo and Lucia Rhode */
 // Music Player coded by Seyun Kim
 // Pie Chart coded by Jiyoon Pyo
-
+// Axios Authorization coded by Lucia Rhode
 import React, { useRef, useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
