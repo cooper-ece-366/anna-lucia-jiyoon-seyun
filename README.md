@@ -12,7 +12,7 @@ The goal of the project is to create a classified database of sounds with abstra
 ```
 git clone git@github.com:cooper-ece-366/anna-lucia-jiyoon-seyun.git
 ```
-on your ocmmand line
+on your command line
 2. Navigate to the anna-lucia-jiyoon-seyun folder by typing
 ```
 cd anna-lucia-jiyoon-seyun
